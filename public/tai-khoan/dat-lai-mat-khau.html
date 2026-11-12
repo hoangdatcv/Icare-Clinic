@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="referrer" content="no-referrer" />
+		<title>Icare Clinic — Đặt lại mật khẩu</title>
+		<link rel="stylesheet" href="../assets/css/xac-thuc.css" />
+		<script src="../assets/js/phien-dang-nhap.js"></script>
+		<script src="dat-lai-mat-khau.js" defer></script>
+	</head>
+	<body>
+		<main class="auth-card">
+			<a class="auth-brand" href="../">Icare Clinic</a>
+			<h1>Đặt lại mật khẩu</h1>
+			<p>
+				Nhập mật khẩu mới cho tài khoản. Liên kết trong email có hiệu lực 15
+				phút và chỉ dùng một lần.
+			</p>
+			<form id="resetForm">
+				<label for="newPassword">Mật khẩu mới</label
+				><input
+					id="newPassword"
+					type="password"
+					autocomplete="new-password"
+					required
+					minlength="12"
+					maxlength="128"
+				/>
+				<label for="confirmPassword">Xác nhận mật khẩu</label
+				><input
+					id="confirmPassword"
+					type="password"
+					autocomplete="new-password"
+					required
+					minlength="12"
+					maxlength="128"
+				/>
+				<p class="hint">
+					Cần 12–128 ký tự, có chữ và ít nhất một số hoặc ký tự đặc biệt.
+				</p>
+				<button>Đặt lại mật khẩu</button>
+			</form>
+			<p
+				id="message"
+				class="auth-message"
+				role="status"
+				aria-live="polite"
+				hidden
+			></p>
+			<a class="back-link" href="quen-mat-khau.html">Yêu cầu liên kết mới</a
+			><a id="loginLink" class="back-link">Quay lại đăng nhập</a>
+		</main>
+	</body>
+</html>

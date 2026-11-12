@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Icare Clinic</title>
+		<link rel="stylesheet" href="trang-chu.css" />
+		<link rel="stylesheet" href="../assets/css/chatbot.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+	<script src="../assets/js/phien-dang-nhap.js" data-role="customer"></script>
+</head>
+	<body>
+		<header class="site-header">
+			<div class="header-inner">
+				<a
+					class="brand"
+					href="trang-chu.html"
+					aria-label="Trang chủ Icare Clinic"
+				>
+					<img src="../assets/images/icare-clinic.svg" alt="Icare Clinic" />
+				</a>
+
+				<div class="header-actions">
+					<div class="hotline-wrap">
+						<span class="header-icon"><i class="fa-solid fa-phone"></i></span>
+						<p class="hotline">HOTLINE: <span>1900 6422</span></p>
+					</div>
+
+					
+					<div class="user-menu">
+						<div class="user-menu-content">
+							<div class="avatar-placeholder">
+								<i class="fa-regular fa-user"></i>
+							</div>
+							<button class="user-info-btn" id="userNameDisplay">
+								[Tên khách hàng]
+							</button>
+							<i class="fa-solid fa-chevron-down user-chevron"></i>
+						</div>
+						<div class="dropdown">
+							<a href="ho-so.html"
+								><button>
+									<i class="fa-regular fa-user"></i> Tài khoản của tôi
+								</button></a
+							>
+							<button id="logoutBtn">
+								<i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero-section">
+				<div class="hero-decor decor-plus decor-plus-one">+</div>
+				<div class="hero-decor decor-plus decor-plus-two">+</div>
+				<div class="hero-inner">
+					<div class="hero-copy">
+						<div class="eyebrow">
+							<i class="fa-solid fa-shield-heart"></i> Chăm sóc tận tâm – Dịch
+							vụ tận nơi – Sức khỏe trọn vẹn
+						</div>
+						<h1>Đặt lịch và xem kết quả khám online</h1>
+						<p class="hero-description">
+							Giờ đây bạn có thể đặt lịch trước khi tới khám và xem được kết quả
+							khám online nhanh chóng mọi lúc mọi nơi.
+						</p>
+
+						<div class="features">
+							<a
+								id="btnDatLich"
+								href="dat-lich.html"
+								class="feature-link"
+							>
+								<div class="feature-box">
+									<div class="feature-icon">
+										<img
+											src="../assets/images/feature-booking.svg"
+											alt="Đặt lịch khám"
+										/>
+									</div>
+									<div class="feature-text">
+										<h3>Đặt lịch khám</h3>
+										<p>Đặt lịch khám online trước khi tới viện</p>
+									</div>
+									<span class="feature-arrow"
+										><i class="fa-solid fa-chevron-right"></i
+									></span>
+								</div>
+							</a>
+
+							<a
+								id="btnHoSo"
+								href="ho-so-y-te.html"
+								class="feature-link"
+							>
+								<div class="feature-box">
+									<div class="feature-icon">
+										<img src="../assets/images/feature-record.svg" alt="Hồ sơ y tế" />
+									</div>
+									<div class="feature-text">
+										<h3>Hồ sơ y tế</h3>
+										<p>Xem và lưu trữ kết quả khám</p>
+									</div>
+									<span class="feature-arrow"
+										><i class="fa-solid fa-chevron-right"></i
+									></span>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="hero-visual" aria-label="Tổng đài hỗ trợ khách hàng">
+						<div class="visual-ring"></div>
+						<div class="visual-card">
+							<img
+								src="../assets/images/hero-support.png"
+								alt="Nhân viên tổng đài hỗ trợ khách hàng"
+							/>
+							<span class="pulse-badge"
+								><i class="fa-solid fa-heart-pulse"></i
+							></span>
+							<div class="visual-caption">
+								<span class="caption-dot"></span>
+								<div>
+									<strong>Tổng đài hỗ trợ</strong
+									><small>Sẵn sàng đồng hành cùng bạn</small>
+								</div>
+							</div>
+						</div>
+						<div class="dot-grid" aria-hidden="true"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<div class="footer-brand">
+					<img src="../assets/images/icare-clinic-white.svg" alt="Icare Clinic" />
+					<p>
+						Mang đến dịch vụ chăm sóc sức khỏe chất lượng cao với sự tận tâm và
+						chuyên nghiệp.
+					</p>
+					<div class="socials" aria-label="Mạng xã hội">
+						<span><i class="fa-brands fa-facebook-f"></i></span>
+						<span><i class="fa-brands fa-youtube"></i></span>
+						<span class="zalo-text">Zalo</span>
+					</div>
+				</div>
+				<div class="footer-divider"></div>
+				<div class="location">
+					<p class="footer-title">Icare Clinic</p>
+					<div class="location-content">
+						<i class="fa-solid fa-location-dot"></i>
+						<p>
+							Cơ sở Tôn Thất Tùng:
+							<span
+								>Số 1 Tôn Thất Tùng, Phường Trung Tự, Quận Đống Đa, Hà Nội</span
+							>
+						</p>
+					</div>
+					<div class="location-content">
+						<i class="fa-solid fa-location-dot"></i>
+						<p>
+							Cơ sở Cầu Giấy:
+							<span>Số 10 Trương Công Giai, Cầu Giấy, Hà Nội</span>
+						</p>
+					</div>
+					<div class="location-content">
+						<i class="fa-solid fa-location-dot"></i>
+						<p>
+							Cơ sở Hoàng Mai:
+							<span>Số 587, Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội</span>
+						</p>
+					</div>
+					<div class="location-content">
+						<i class="fa-solid fa-envelope"></i>
+						<p>Email: <span>icare@hospital.vn</span></p>
+					</div>
+					<div class="location-content">
+						<i class="fa-solid fa-phone"></i>
+						<p>Tổng đài: <span>1900 6422</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-medical-mark">
+				<i class="fa-solid fa-shield-heart"></i>
+			</div>
+		</footer>
+
+		<!-- Khung trò chuyện. -->
+		<button id="chatBtn" type="button" aria-label="Mở trò chuyện Icare Clinic" aria-controls="chatWindow" aria-expanded="false">
+			<img src="../assets/images/icon.png" alt="Chat" /><span>Chat với Icare Clinic</span>
+		</button>
+		<div id="chatWindow" role="region" aria-label="Trò chuyện với Icare Clinic">
+			<div class="chat-header">
+				<img src="../assets/images/icon.png" alt="" /><span>Trợ lý Icare Clinic</span
+				><button id="closeChat" type="button" aria-label="Đóng trò chuyện">&times;</button>
+			</div>
+			<div class="chat-body" id="chatBody" role="log" aria-live="polite" aria-relevant="additions text">
+				<div class="chat-message bot">Bạn muốn tìm hiểu thông tin về bệnh nào?</div>
+			</div>
+			<div class="chat-input">
+				<input
+					type="text"
+					id="userInput"
+					aria-label="Câu hỏi gửi Icare Clinic"
+					maxlength="2000"
+					autocomplete="off"
+					placeholder="Nhập tin nhắn..."
+				/><button id="sendBtn" type="button">Gửi</button>
+			</div>
+		</div>
+
+		<!-- Mã xử lý chatbot. -->
+		<script src="../assets/js/chatbot.js"></script>
+		<script src="trang-chu.js"></script>
+	</body>
+</html>

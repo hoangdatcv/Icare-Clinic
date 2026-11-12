@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer"><title>Icare Clinic — Quên mật khẩu</title>
+  <link rel="stylesheet" href="../assets/css/xac-thuc.css">
+  <script src="../assets/js/phien-dang-nhap.js"></script><script src="quen-mat-khau.js" defer></script>
+</head>
+<body><main class="auth-card">
+  <a class="auth-brand" href="../">Icare Clinic</a><h1>Quên mật khẩu</h1>
+  <p>Nhập email đã được xác minh của tài khoản. Chúng tôi sẽ gửi liên kết để bạn đặt lại mật khẩu.</p>
+  <form id="forgotPasswordForm">
+    <label for="forgotEmail">Email tài khoản</label>
+    <input id="forgotEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="tenban@gmail.com" required>
+    <button type="submit">Gửi liên kết đặt lại mật khẩu</button>
+  </form>
+  <p id="forgotMessage" class="auth-message" role="status" aria-live="polite" hidden></p>
+  <p class="hint">Tài khoản chưa có email? Hãy đăng nhập, thêm và xác minh email trong hồ sơ. Nếu không thể đăng nhập, hãy liên hệ phòng khám để được xác minh danh tính và hỗ trợ.</p>
+  <a class="back-link" href="xac-minh-email.html">Gửi lại email xác minh</a>
+  <a id="forgotLoginLink" class="back-link">Quay lại đăng nhập</a>
+</main></body></html>

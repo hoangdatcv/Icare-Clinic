@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ sơ sức khỏe - Icare Clinic</title>
+  <link rel="stylesheet" href="ho-so-y-te.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="../assets/js/phien-dang-nhap.js" data-role="customer"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="trang-chu.html" aria-label="Trang chủ Icare Clinic">
+        <img src="../assets/images/icare-clinic.svg" alt="Icare Clinic">
+      </a>
+
+      <div class="header-actions">
+        <div class="hotline-wrap">
+          <span class="header-icon"><i class="fa-solid fa-phone"></i></span>
+          <p class="hotline">HOTLINE: <span>1900 6422</span></p>
+        </div>
+        <nav class="quick-nav" aria-label="Điều hướng nhanh">
+          <a href="trang-chu.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+          <span class="nav-divider"></span>
+          <a href="dat-lich.html"><i class="fa-regular fa-calendar-check"></i> Đặt lịch khám</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div>
+          <div class="eyebrow"><i class="fa-solid fa-file-waveform"></i> Thông tin sức khỏe của bạn</div>
+          <h1>Hồ sơ sức khỏe điện tử</h1>
+          <p>Theo dõi thông tin cá nhân, lịch sử khám và kết quả khám trên cùng một giao diện rõ ràng, thuận tiện.</p>
+        </div>
+        <div class="hero-icon" aria-hidden="true"><i class="fa-solid fa-notes-medical"></i></div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      
+      <section class="profile-card content-card">
+        <div class="section-heading">
+          <span class="section-icon"><i class="fa-regular fa-user"></i></span>
+          <div>
+            <p class="section-kicker">Thông tin hồ sơ</p>
+            <h2>Thông tin bệnh nhân</h2>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="info-item"><span class="info-label">Họ và tên</span><strong id="name"></strong></div>
+          <div class="info-item"><span class="info-label">Giới tính</span><strong id="gender"></strong></div>
+          <div class="info-item"><span class="info-label">Ngày sinh</span><strong id="dob"></strong></div>
+          <div class="info-item"><span class="info-label">Mã hồ sơ</span><strong id="recordId"></strong></div>
+          <div class="info-item"><span class="info-label">CCCD</span><strong id="cccd"></strong></div>
+          <div class="info-item info-wide"><span class="info-label">Địa chỉ</span><strong id="diaChi"></strong></div>
+        </div>
+      </section>
+
+      <section class="record-list content-card">
+        <div class="section-heading table-heading">
+          <span class="section-icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+          <div>
+            <p class="section-kicker">Quá trình thăm khám</p>
+            <h2>Lịch sử khám bệnh</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Ngày khám</th>
+                <th>Bác sĩ</th>
+                <th>Khoa</th>
+                <th>Kết luận</th>
+              </tr>
+            </thead>
+            <tbody id="recordTable">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-box content-card">
+        <div class="detail-accent"><i class="fa-solid fa-stethoscope"></i></div>
+        <div>
+          <p class="section-kicker">Kết quả khám</p>
+          <h3>Chi tiết kết quả khám</h3>
+          <p id="detailText">Bấm vào một dòng trong bảng để xem chi tiết kết quả.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/images/icare-clinic-white.svg" alt="Icare Clinic">
+        <p>Mang đến dịch vụ chăm sóc sức khỏe chất lượng cao với sự tận tâm và chuyên nghiệp.</p>
+        <div class="socials" aria-label="Mạng xã hội">
+          <span><i class="fa-brands fa-facebook-f"></i></span>
+          <span><i class="fa-brands fa-youtube"></i></span>
+          <span class="zalo-text">Zalo</span>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="location">
+        <p class="footer-title">Icare Clinic</p>
+        <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Tôn Thất Tùng: <span>Số 1 Tôn Thất Tùng, Phường Trung Tự, Quận Đống Đa, Hà Nội</span></p></div>
+        <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Cầu Giấy: <span>Số 10 Trương Công Giai, Cầu Giấy, Hà Nội</span></p></div>
+        <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Hoàng Mai: <span>Số 587, Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội</span></p></div>
+        <div class="location-content"><i class="fa-solid fa-envelope"></i><p>Email: <span>icare@hospital.vn</span></p></div>
+        <div class="location-content"><i class="fa-solid fa-phone"></i><p>Tổng đài: <span>1900 6422</span></p></div>
+      </div>
+    </div>
+    <div class="footer-medical-mark"><i class="fa-solid fa-shield-heart"></i></div>
+  </footer>
+
+  <script src="ho-so-y-te.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer"><title>Icare Clinic — Email tài khoản</title>
+  <link rel="stylesheet" href="../assets/css/xac-thuc.css"><link rel="stylesheet" href="../assets/css/email-tai-khoan.css">
+  <script src="../assets/js/phien-dang-nhap.js"></script><script src="../assets/js/email-tai-khoan.js" defer></script>
+</head>
+<body><main class="auth-card">
+  <a class="auth-brand" href="../">Icare Clinic</a>
+  <section class="account-email-panel" data-account-email>
+    <h2>Email tài khoản</h2>
+    <p data-email-current>Đang tải email…</p><p class="email-status" data-email-status></p>
+    <p data-email-pending hidden></p>
+    <form data-email-form>
+      <label for="accountEmail">Thêm hoặc thay đổi email</label><input id="accountEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="tenban@gmail.com" required>
+      <label for="accountEmailPassword">Mật khẩu hiện tại</label><input id="accountEmailPassword" name="currentPassword" type="password" autocomplete="current-password" required>
+      <button type="submit">Gửi email xác minh</button>
+    </form>
+    <p class="email-note">Mở liên kết trong email để xác minh. Email mới chỉ thay thế email hiện tại sau khi xác minh thành công. Liên kết có hiệu lực 15 phút.</p>
+    <p data-email-message role="status" aria-live="polite" hidden></p>
+  </section>
+  <a id="emailBackLink" class="back-link">Quay lại tài khoản</a>
+</main></body></html>

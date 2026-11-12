@@ -1,0 +1,4 @@
+* text=auto
+
+# Giữ nguyên byte của dữ liệu bệnh.
+data/y-te/* -text

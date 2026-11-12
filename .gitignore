@@ -1,0 +1,40 @@
+# Thư viện và cache
+node_modules/
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage/
+vector_db/
+
+# Cấu hình và bản sao riêng tư
+.env
+.env.*
+!.env.example
+.local/
+backups/
+database/backup/
+data/archive/
+*.pem
+*.key
+
+# SQL cấu trúc và dữ liệu mẫu
+*.sql
+!database/migrations/*.sql
+!database/icare_clinic_demo.sql
+
+# Công cụ cục bộ và gói phát hành
+.vscode/
+.idea/
+.chat-ui-tools/
+.cleanup-*/
+dist/
+*.zip
+*.7z
+*.tgz
+*.log
+.DS_Store
+Thumbs.db

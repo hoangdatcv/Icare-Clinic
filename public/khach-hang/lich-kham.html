@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch khám của tôi - Icare Clinic</title>
+    <link rel="stylesheet" href="lich-kham.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="../assets/js/phien-dang-nhap.js" data-role="customer"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="trang-chu.html" aria-label="Trang chủ Icare Clinic">
+                <img src="../assets/images/icare-clinic.svg" alt="Icare Clinic">
+            </a>
+            <div class="header-actions">
+                <div class="hotline-wrap">
+                    <span class="header-icon"><i class="fa-solid fa-phone"></i></span>
+                    <p class="hotline">HOTLINE: <span>1900 6422</span></p>
+                </div>
+                <nav class="quick-nav" aria-label="Điều hướng nhanh">
+                    <a href="trang-chu.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    <span class="nav-divider"></span>
+                    <a href="ho-so-y-te.html"><i class="fa-regular fa-folder-open"></i> Hồ sơ y tế</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <div>
+                    <div class="eyebrow"><i class="fa-solid fa-clock-rotate-left"></i> Quản lý lịch khám thuận tiện</div>
+                    <h1>Lịch khám của tôi</h1>
+                    <p>Theo dõi trạng thái các lịch khám đã đặt và thực hiện thao tác hủy theo đúng quy trình hiện tại.</p>
+                </div>
+                <a href="dat-lich.html" class="back-booking"><i class="fa-regular fa-calendar-plus"></i> Quay lại đặt lịch</a>
+            </div>
+        </section>
+
+        <section class="appointments-shell">
+            <div class="appointments-card">
+                <div class="card-heading">
+                    <span class="section-icon"><i class="fa-regular fa-calendar-check"></i></span>
+                    <div>
+                        <p>Danh sách lịch hẹn</p>
+                        <h2>Lịch khám đã đặt</h2>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table id="lichTable">
+                        <thead>
+                            <tr>
+                                <th>Bác sĩ</th>
+                                <th>Khoa</th>
+                                <th>Ngày</th>
+                                <th>Giờ</th>
+                                <th>Trạng thái</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lichList">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../assets/images/icare-clinic-white.svg" alt="Icare Clinic">
+                <p>Mang đến dịch vụ chăm sóc sức khỏe chất lượng cao với sự tận tâm và chuyên nghiệp.</p>
+                <div class="socials" aria-label="Mạng xã hội">
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-youtube"></i></span>
+                    <span class="zalo-text">Zalo</span>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="location">
+                <p class="footer-title">Icare Clinic</p>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Tôn Thất Tùng: <span>Số 1 Tôn Thất Tùng, Phường Trung Tự, Quận Đống Đa, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Cầu Giấy: <span>Số 10 Trương Công Giai, Cầu Giấy, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Hoàng Mai: <span>Số 587, Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-envelope"></i><p>Email: <span>icare@hospital.vn</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-phone"></i><p>Tổng đài: <span>1900 6422</span></p></div>
+            </div>
+        </div>
+        <div class="footer-medical-mark"><i class="fa-solid fa-shield-heart"></i></div>
+    </footer>
+
+    <script src="lich-kham.js"></script>
+</body>
+</html>

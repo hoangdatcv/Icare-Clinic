@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Đặt lịch khám - Icare Clinic</title>
+    <link rel="stylesheet" href="dat-lich.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="../assets/js/phien-dang-nhap.js" data-role="customer"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="trang-chu.html" aria-label="Trang chủ Icare Clinic">
+                <img src="../assets/images/icare-clinic.svg" alt="Icare Clinic">
+            </a>
+            <div class="header-actions">
+                <div class="hotline-wrap">
+                    <span class="header-icon"><i class="fa-solid fa-phone"></i></span>
+                    <p class="hotline">HOTLINE: <span>1900 6422</span></p>
+                </div>
+                <nav class="quick-nav" aria-label="Điều hướng nhanh">
+                    <a href="trang-chu.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    <span class="nav-divider"></span>
+                    <a href="ho-so-y-te.html"><i class="fa-regular fa-folder-open"></i> Hồ sơ y tế</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <div>
+                    <div class="eyebrow"><i class="fa-regular fa-calendar-check"></i> Chủ động thời gian – Tiết kiệm chờ đợi</div>
+                    <h1>Đặt lịch khám</h1>
+                    <p>Chọn chuyên khoa, bác sĩ và khung giờ phù hợp. Quy trình đặt lịch hiện tại được giữ nguyên, chỉ được làm mới về giao diện.</p>
+                </div>
+                <a href="lich-kham.html" class="btnViewLich"><i class="fa-solid fa-clock-rotate-left"></i> Xem lịch của tôi</a>
+            </div>
+        </section>
+
+        <section class="booking-area">
+            <div class="booking-box">
+                <div class="booking-heading">
+                    <div class="section-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div>
+                        <p class="section-kicker">Tìm lịch khám phù hợp</p>
+                        <h2>Thông tin đặt lịch</h2>
+                    </div>
+                </div>
+
+                
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="fullname">Người bệnh</label>
+                        <div class="field-control"><i class="fa-regular fa-user"></i><input type="text" id="fullname" placeholder="Họ và tên người bệnh"></div>
+                    </div>
+                    <div class="input-box">
+                        <label for="reason">Lý do khám</label>
+                        <div class="field-control"><i class="fa-solid fa-notes-medical"></i><input type="text" id="reason" placeholder="Lý do đến khám / Triệu chứng"></div>
+                    </div>
+                    <div class="input-box">
+                        <label for="khoaInput">Chuyên khoa <span style="font-weight:400;color:#6b7c93">(không chọn vẫn xem toàn bộ bác sĩ)</span></label>
+                        <div class="field-control"><i class="fa-solid fa-stethoscope"></i><input type="text" id="khoaInput" placeholder="Chọn khoa để lọc bác sĩ" readonly aria-haspopup="listbox" aria-expanded="false"><i class="fa-solid fa-chevron-down field-chevron"></i></div>
+                        <div class="dropdown" id="dropdownKhoa" role="listbox" aria-label="Danh sách khoa">
+                            <!-- Danh sách chuyên khoa. -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="results-heading">
+                <div>
+                    <p class="section-kicker">Danh sách bác sĩ</p>
+                    <h2>Chọn bác sĩ và thời gian khám</h2>
+                </div>
+            </div>
+            <div id="doctorsList">
+                <!-- Danh sách bác sĩ. -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../assets/images/icare-clinic-white.svg" alt="Icare Clinic">
+                <p>Mang đến dịch vụ chăm sóc sức khỏe chất lượng cao với sự tận tâm và chuyên nghiệp.</p>
+                <div class="socials" aria-label="Mạng xã hội">
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-youtube"></i></span>
+                    <span class="zalo-text">Zalo</span>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="location">
+                <p class="footer-title">Icare Clinic</p>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Tôn Thất Tùng: <span>Số 1 Tôn Thất Tùng, Phường Trung Tự, Quận Đống Đa, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Cầu Giấy: <span>Số 10 Trương Công Giai, Cầu Giấy, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-location-dot"></i><p>Cơ sở Hoàng Mai: <span>Số 587, Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-envelope"></i><p>Email: <span>icare@hospital.vn</span></p></div>
+                <div class="location-content"><i class="fa-solid fa-phone"></i><p>Tổng đài: <span>1900 6422</span></p></div>
+            </div>
+        </div>
+        <div class="footer-medical-mark"><i class="fa-solid fa-shield-heart"></i></div>
+    </footer>
+
+    <div id="confirmPopup" class="confirm-popup" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="popup-content" role="document">
+            <span class="popup-icon"><i class="fa-regular fa-calendar-check"></i></span>
+            <h3>Xác nhận đặt lịch khám</h3>
+            <div id="confirmSummary"></div>
+            <p>Bạn có chắc chắn muốn đặt lịch khám với thông tin trên không?</p>
+            <div class="popup-buttons">
+                <button id="confirmYes" class="btn-confirm">Xác nhận</button>
+                <button id="confirmNo" class="btn-cancel">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dat-lich.js"></script>
+</body>
+</html>

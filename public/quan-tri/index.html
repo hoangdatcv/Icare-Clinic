@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Quản trị hệ thống | Icare Clinic</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+        :root {
+            --ta-primary: #1268d5;
+            --ta-primary-dark: #0b4eaa;
+            --ta-primary-deep: #073b82;
+            --ta-primary-soft: #eaf3ff;
+            --ta-sky: #49a9f8;
+            --ta-bg: #f3f7fc;
+            --ta-surface: #ffffff;
+            --ta-text: #14213d;
+            --ta-muted: #64748b;
+            --ta-border: #dce7f4;
+            --ta-danger: #e5484d;
+            --ta-shadow: 0 14px 38px rgba(15, 68, 135, .09);
+            --ta-shadow-sm: 0 8px 24px rgba(15, 68, 135, .07);
+            --ta-radius: 18px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            min-width: 1040px;
+            background:
+                radial-gradient(circle at 82% 4%, rgba(77, 169, 248, .12), transparent 26%),
+                radial-gradient(circle at 8% 94%, rgba(18, 104, 213, .07), transparent 24%),
+                var(--ta-bg) !important;
+            color: var(--ta-text) !important;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Thanh điều hướng. */
+        .sidebar {
+            width: 292px;
+            min-width: 292px !important;
+            padding: 0 !important;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(180deg, #0a4c9d 0%, #073a7d 56%, #062f67 100%) !important;
+            box-shadow: 12px 0 40px rgba(7, 55, 119, .13);
+        }
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            top: -130px;
+            left: -90px;
+            background: rgba(255,255,255,.08);
+            pointer-events: none;
+        }
+        .sidebar::after {
+            content: "+";
+            position: absolute;
+            right: -10px;
+            bottom: 42px;
+            color: rgba(255,255,255,.045);
+            font-size: 190px;
+            font-weight: 800;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .admin-brand {
+            position: relative;
+            z-index: 1;
+            padding: 28px 22px 22px;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+        .admin-brand-inner { display: flex; align-items: center; gap: 13px; }
+        .admin-brand-logo {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: rgba(255,255,255,.13);
+            border: 1px solid rgba(255,255,255,.22);
+            backdrop-filter: blur(10px);
+        }
+        .admin-brand-logo svg { width: 27px; height: 27px; color: #fff; }
+        .admin-brand-name {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: .2px;
+        }
+        .admin-brand-sub {
+            color: rgba(232,244,255,.74);
+            font-size: 11.5px;
+            margin-top: 4px;
+        }
+        .admin-panel-label {
+            margin-top: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #dceeff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .admin-panel-label::before {
+            content: "";
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #67d5ff;
+            box-shadow: 0 0 0 4px rgba(103,213,255,.14);
+        }
+        .sidebar nav {
+            position: relative;
+            z-index: 1;
+            padding: 20px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .sidebar nav button[data-page], .sidebar #logoutBtn {
+            width: 100%;
+            min-height: 49px;
+            padding: 0 13px !important;
+            display: flex;
+            align-items: center;
+            gap: 12px !important;
+            border: 1px solid transparent;
+            border-radius: 13px !important;
+            color: rgba(235,246,255,.82) !important;
+            background: transparent !important;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: .2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar nav button[data-page]::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 23px;
+            left: 0;
+            top: 50%;
+            border-radius: 0 4px 4px 0;
+            transform: translateY(-50%) scaleY(0);
+            background: #75c9ff;
+            transition: .2s ease;
+        }
+        .sidebar nav button[data-page]:hover, .sidebar #logoutBtn:hover {
+            color: #fff !important;
+            background: rgba(255,255,255,.10) !important;
+            border-color: rgba(255,255,255,.08);
+            transform: translateX(2px);
+        }
+        .sidebar nav button[data-page].bg-slate-700 {
+            color: #fff !important;
+            background: linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.095)) !important;
+            border-color: rgba(255,255,255,.16);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 18px rgba(0,0,0,.08);
+        }
+        .sidebar nav button[data-page].bg-slate-700::after { transform: translateY(-50%) scaleY(1); }
+        .nav-icon {
+            width: 33px;
+            height: 33px;
+            flex: 0 0 33px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: rgba(255,255,255,.08);
+        }
+        .nav-icon svg { width: 18px; height: 18px; stroke-width: 1.9; }
+        .sidebar nav button.bg-slate-700 .nav-icon { background: rgba(255,255,255,.14); }
+        .sidebar-logout {
+            position: relative;
+            z-index: 1;
+            padding: 12px 14px 22px;
+            border-top: 1px solid rgba(255,255,255,.10);
+        }
+        .sidebar #logoutBtn { color: #eaf4ff !important; }
+
+        /* Nội dung và thanh đầu trang. */
+        main.admin-main {
+            padding: 0 !important;
+            overflow: auto;
+            background: transparent;
+        }
+        .admin-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 35;
+            height: 92px;
+            padding: 0 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,.93);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(199,216,236,.72);
+            box-shadow: 0 5px 18px rgba(30,72,125,.035);
+        }
+        .admin-topbar h2 {
+            margin: 0;
+            color: var(--ta-text);
+            font-size: 24px !important;
+            line-height: 1.15;
+            font-weight: 800 !important;
+            letter-spacing: -.3px;
+        }
+        .admin-topbar-sub {
+            margin-top: 7px;
+            font-size: 12px;
+            color: var(--ta-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .admin-topbar-sub .crumb {
+            color: var(--ta-primary);
+            font-weight: 700;
+        }
+        .admin-user-card {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 8px 12px 8px 9px;
+            border: 1px solid var(--ta-border);
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 16px rgba(24,79,141,.045);
+        }
+        .admin-user-avatar {
+            width: 40px; height: 40px;
+            display: grid; place-items: center;
+            border-radius: 12px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--ta-primary), #4aaaf7);
+            box-shadow: 0 6px 16px rgba(18,104,213,.22);
+        }
+        .admin-user-avatar svg { width: 20px; height: 20px; }
+        .admin-user-name { color: #1e2d4a; font-size: 13px; font-weight: 800; }
+        .admin-user-role { color: #7890aa; font-size: 10.5px; margin-top: 2px; }
+        .admin-online-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #36b37e;
+            box-shadow: 0 0 0 4px rgba(54,179,126,.12);
+            margin-left: 3px;
+        }
+        .admin-content { padding: 28px 34px 34px; }
+
+        /* Khung nội dung. */
+        #pages { max-width: 1540px; margin: 0 auto; }
+        #pages > section[data-page] { animation: taFade .22s ease; }
+        @keyframes taFade { from { opacity: 0; transform: translateY(5px);} to {opacity:1;transform:none;} }
+        #pages > section[data-page] > .flex:first-child,
+        #pages > section[data-page] > .flex.items-center.justify-between.mb-4:first-child {
+            min-height: 58px;
+            margin-bottom: 16px !important;
+            padding: 0 2px;
+        }
+        #pages h3.text-lg {
+            color: #1b2a47;
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            letter-spacing: -.1px;
+        }
+        #pages h3.text-lg::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            margin-right: 9px;
+            vertical-align: -3px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, #4eaff8, var(--ta-primary));
+        }
+        .bg-white.rounded-lg.shadow,
+        .bg-white.rounded-lg.shadow-sm,
+        #pages .bg-white.rounded-lg.p-4.shadow-sm,
+        #pages .mt-4.bg-white.rounded-lg.shadow.p-4,
+        #pages .bg-white.rounded-lg.shadow.p-4 {
+            border: 1px solid var(--ta-border) !important;
+            border-radius: var(--ta-radius) !important;
+            background: rgba(255,255,255,.98) !important;
+            box-shadow: var(--ta-shadow-sm) !important;
+        }
+
+        /* Thống kê. */
+        section[data-page="dashboard"] > .grid.grid-cols-4 {
+            gap: 16px !important;
+            margin-bottom: 18px !important;
+        }
+        section[data-page="dashboard"] > .grid.grid-cols-4 > div {
+            min-height: 112px;
+            padding: 20px !important;
+            position: relative;
+            overflow: hidden;
+        }
+        section[data-page="dashboard"] > .grid.grid-cols-4 > div::after {
+            content: "";
+            position: absolute;
+            width: 70px; height: 70px;
+            right: -18px; top: -18px;
+            border-radius: 50%;
+            background: rgba(18,104,213,.06);
+        }
+        section[data-page="dashboard"] .grid-cols-4 .text-sm { color: #70849b !important; font-size: 12px !important; font-weight: 650; }
+        section[data-page="dashboard"] .grid-cols-4 h2 { margin-top: 8px; font-size: 29px !important; color: var(--ta-primary) !important; font-weight: 850 !important; }
+        section[data-page="dashboard"] > .grid.grid-cols-3 { gap: 16px !important; }
+        section[data-page="dashboard"] > .grid.grid-cols-3 > div { border-radius: var(--ta-radius) !important; }
+        #chartPlaceholder { height: 280px !important; }
+        #recentActivities { max-height: 280px !important; }
+
+        /* Bảng dữ liệu. */
+        .overflow-x-auto { border-radius: var(--ta-radius); }
+        table {
+            width: 100%;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+            font-size: 12.5px;
+            color: #334661;
+        }
+        table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            padding: 13px 12px !important;
+            background: #f3f7fc !important;
+            color: #536b87 !important;
+            border-top: 1px solid #e3ecf6;
+            border-bottom: 1px solid #dfe8f3;
+            font-size: 10.5px !important;
+            font-weight: 800 !important;
+            letter-spacing: .035em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        table thead th:first-child { border-left: 1px solid #e3ecf6; border-radius: 11px 0 0 11px; }
+        table thead th:last-child { border-right: 1px solid #e3ecf6; border-radius: 0 11px 11px 0; }
+        table tbody td {
+            padding: 13px 12px !important;
+            border-bottom: 1px solid #edf2f8 !important;
+            vertical-align: middle;
+        }
+        table tbody tr { transition: background .15s ease, transform .15s ease; }
+        table tbody tr:hover { background: #f8fbff !important; }
+        table tbody tr:last-child td { border-bottom: 0 !important; }
+        table tbody button {
+            border-radius: 8px !important;
+            transition: .15s ease;
+        }
+
+        /* Biểu mẫu. */
+        input, select, textarea {
+            border: 1px solid #cfddec !important;
+            border-radius: 11px !important;
+            background: #fff !important;
+            color: #263852 !important;
+            min-height: 42px;
+            transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+        }
+        textarea { min-height: 86px; resize: vertical; }
+        input::placeholder, textarea::placeholder { color: #9aaabd !important; }
+        input:focus, select:focus, textarea:focus {
+            outline: none !important;
+            border-color: #65a9ed !important;
+            box-shadow: 0 0 0 4px rgba(18,104,213,.10) !important;
+            --tw-ring-shadow: none !important;
+        }
+        label { color: #536982 !important; font-size: 12px !important; font-weight: 700 !important; }
+        #searchDept, #doctorSearch { min-width: 230px; }
+
+        /* Nút thao tác. */
+        button { outline: none; }
+        .bg-teal-500, .bg-teal-600 {
+            background: linear-gradient(135deg, var(--ta-primary), #2b86e8) !important;
+            color: #fff !important;
+            border: 1px solid rgba(5,85,174,.18) !important;
+            border-radius: 11px !important;
+            box-shadow: 0 6px 15px rgba(18,104,213,.17);
+            font-weight: 700 !important;
+            transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+        }
+        .bg-teal-500:hover, .bg-teal-600:hover {
+            filter: brightness(.98);
+            transform: translateY(-1px);
+            box-shadow: 0 9px 20px rgba(18,104,213,.23);
+        }
+        .text-teal-600 { color: var(--ta-primary) !important; }
+        .focus\:ring-teal-400:focus { --tw-ring-color: rgba(18,104,213,.15) !important; }
+        button.bg-white.border, button.border {
+            border-color: #cfddec !important;
+            border-radius: 11px !important;
+            color: #526983;
+            background: #fff !important;
+            font-weight: 650;
+            transition: .15s ease;
+        }
+        button.bg-white.border:hover, button.border:hover { background: #f7faff !important; border-color: #abc5e2 !important; color: var(--ta-primary); }
+
+        /* Hộp thoại. */
+        [id$="Modal"].fixed.inset-0 {
+            z-index: 70;
+            padding: 24px;
+            background: rgba(10, 31, 60, .52) !important;
+            backdrop-filter: blur(5px);
+        }
+        [id$="Modal"].fixed.inset-0 > div {
+            border: 1px solid rgba(215,229,244,.9);
+            border-radius: 20px !important;
+            box-shadow: 0 28px 75px rgba(7,45,91,.26) !important;
+            animation: taModal .18s ease;
+        }
+        @keyframes taModal { from {opacity:0;transform:translateY(7px) scale(.985);} to {opacity:1;transform:none;} }
+        [id$="Modal"] h3 { color: #1c2d49 !important; font-weight: 800 !important; }
+        [id^="close"] { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; }
+        [id^="close"]:hover { background: #fff0f0 !important; }
+
+        /* Thành phần phụ. */
+        .text-slate-500, .text-slate-400 { color: #71859c !important; }
+        .text-slate-700, .text-slate-800 { color: var(--ta-text) !important; }
+        .active-item { background: #eef5fd !important; }
+        .admin-footer {
+            margin: 28px auto 6px;
+            padding: 17px 20px;
+            max-width: 1540px;
+            color: #8394a8;
+            font-size: 11.5px;
+            text-align: center;
+            border-top: 1px solid #dce6f1;
+        }
+        .admin-footer strong { color: #58708d; }
+
+        /* Thanh cuộn. */
+        ::-webkit-scrollbar { width: 9px; height: 9px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c8d8e9; border-radius: 99px; border: 2px solid transparent; background-clip: padding-box; }
+        ::-webkit-scrollbar-thumb:hover { background: #a9bfd7; background-clip: padding-box; }
+
+        @media (max-width: 1240px) {
+            .sidebar { width: 258px; min-width: 258px !important; }
+            .admin-content { padding-left: 24px; padding-right: 24px; }
+            .admin-topbar { padding-left: 24px; padding-right: 24px; }
+            section[data-page="dashboard"] > .grid.grid-cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+        }
+    
+        /* Trạng thái và khung giờ khám. */
+        .appointment-status-select {
+            min-width: 142px;
+            border-color: #cfe0f2 !important;
+            background: #fff;
+            color: #233a56;
+            font-weight: 700;
+        }
+        .admin-status-locked {
+            min-width: 160px;
+            padding: 8px 10px;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 2px;
+            border: 1px solid #ffd4d8;
+            border-radius: 10px;
+            background: #fff2f3;
+            color: #b42334;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .admin-status-locked small {
+            color: #a86a73;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .admin-time-hint {
+            margin: 5px 0 10px;
+            padding: 9px 11px;
+            border: 1px solid #dce9f7;
+            border-radius: 10px;
+            background: #f7fbff;
+            color: #6b7d91;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+        .admin-time-hint.has-slots {
+            color: #38536e;
+            background: #f1f8ff;
+        }
+        .admin-time-slots {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 8px;
+        }
+        .admin-time-slot {
+            min-height: 54px;
+            padding: 7px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            border: 1px solid #c9dcef;
+            border-radius: 10px;
+            background: #fff;
+            color: #31516f;
+            cursor: pointer;
+            transition: .16s ease;
+        }
+        .admin-time-slot.available:hover {
+            border-color: #5fa9ee;
+            background: #f2f8ff;
+            color: #0b66d4;
+            transform: translateY(-1px);
+        }
+        .admin-time-slot.selected {
+            border-color: #1268d5;
+            background: linear-gradient(135deg, #1268d5, #2a91ea);
+            color: #fff;
+            box-shadow: 0 7px 18px rgba(18, 104, 213, .18);
+        }
+        .admin-time-slot.booked,
+        .admin-time-slot:disabled {
+            border-color: #111827;
+            background: #111827;
+            color: #fff;
+            cursor: not-allowed;
+            opacity: 1;
+            transform: none;
+        }
+        .admin-time-slot .slot-time {
+            font-size: 13px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .admin-time-slot .slot-note {
+            font-size: 9px;
+            font-weight: 700;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+        .admin-time-slot.booked .slot-note { color: #d1d5db; }
+        .admin-time-legend {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .admin-time-legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .legend-swatch {
+            width: 11px;
+            height: 11px;
+            display: inline-block;
+            border-radius: 3px;
+        }
+        .legend-free { background: #fff; border: 2px solid #5fa9ee; }
+        .legend-booked { background: #111827; border: 2px solid #111827; }
+</style>
+<script src="../assets/js/phien-dang-nhap.js" data-role="admin"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+	<div class="h-screen flex">
+		
+		<aside class="sidebar text-slate-100 flex flex-col">
+            <div class="admin-brand">
+                <div class="admin-brand-inner">
+                    <div class="admin-brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 21s-6.5-3.4-8.7-8.1C1.6 9.2 3.4 5.5 7 5.1c2-.2 3.7.8 5 2.4 1.3-1.6 3-2.6 5-2.4 3.6.4 5.4 4.1 3.7 7.8C18.5 17.6 12 21 12 21Z"/>
+                            <path d="M8.1 12h2.1l1.1-2.3 1.8 4.6 1.1-2.3h2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="admin-brand-name">Icare Clinic</div>
+                        <div class="admin-brand-sub">Hệ thống quản trị phòng khám</div>
+                    </div>
+                </div>
+                <div class="admin-panel-label">Khu vực quản trị</div>
+            </div>
+
+            <nav class="flex-1">
+                <button data-page="dashboard" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                    <span>Tổng quan</span>
+                </button>
+                <button data-page="records" class="text-left bg-slate-700">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 3h10a2 2 0 0 1 2 2v16H5V5a2 2 0 0 1 2-2Z"/><path d="M9 3v4h6V3M8 11h8M8 15h8"/></svg></span>
+                    <span>Quản lý Hồ sơ y tế</span>
+                </button>
+                <button data-page="history" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2M4.5 5.5 3 4"/></svg></span>
+                    <span>Lịch sử khám bệnh</span>
+                </button>
+                <button data-page="appointments" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8 14h3M8 17h5"/></svg></span>
+                    <span>Quản lý Lịch khám</span>
+                </button>
+                <button data-page="doctors" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2M18 10v5M15.5 12.5h5"/></svg></span>
+                    <span>Quản lý Bác sĩ</span>
+                </button>
+                <button data-page="departments" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 21V6l8-3 8 3v15M9 21v-5h6v5M8 8h2M14 8h2M8 12h2M14 12h2"/></svg></span>
+                    <span>Quản lý Khoa</span>
+                </button>
+                <button data-page="accounts" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3"/><path d="M3.5 20v-1.5A5.5 5.5 0 0 1 9 13h0a5.5 5.5 0 0 1 5.5 5.5V20M16 8.5a2.5 2.5 0 1 1 0 5M17.5 15.5c2 .5 3.5 2.3 3.5 4.5"/></svg></span>
+                    <span>Quản lý Tài khoản</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-logout">
+                <button id="logoutBtn" class="text-left">
+                    <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5M14 8l4 4-4 4M18 12H9"/></svg></span>
+                    <span>Đăng xuất</span>
+                </button>
+            </div>
+        </aside>
+
+		
+		<main class="admin-main flex-1 overflow-auto">
+			
+			<header class="admin-topbar">
+                <div>
+                    <h2 id="pageTitle">Quản lý Hồ sơ y tế</h2>
+                    <div class="admin-topbar-sub">
+                        <span>Icare Clinic</span>
+                        <span>•</span>
+                        <span class="crumb">Hệ thống quản trị</span>
+                    </div>
+                </div>
+                <div class="admin-user-card" aria-label="Tài khoản quản trị viên">
+                    <div class="admin-user-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-1.5A6.5 6.5 0 0 1 11.5 13h1A6.5 6.5 0 0 1 19 19.5V21"/></svg>
+                    </div>
+                    <div>
+                        <div class="admin-user-name">Quản trị viên</div>
+                        <div class="admin-user-role">Admin hệ thống</div>
+                        <a href="../tai-khoan/email.html" style="color:#1268d5;font-size:12px">Email tài khoản</a>
+                    </div>
+                    <span class="admin-online-dot" title="Đang hoạt động"></span>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+			
+			<section id="pages" class="space-y-6">
+				
+				<section data-page="dashboard" class="hidden">
+					<div class="grid grid-cols-4 gap-4 mb-4">
+						<div class="bg-white rounded-lg p-4 shadow-sm">
+							<div class="text-sm text-slate-500">Tổng hồ sơ y tế</div>
+							<h2 id="totalRecords" class="text-2xl font-bold text-teal-600">0</h2>
+						</div>
+						<div class="bg-white rounded-lg p-4 shadow-sm">
+							<div class="text-sm text-slate-500">Số bác sĩ</div>
+							<h2 id="totalDoctors" class="text-2xl font-bold text-blue-600">0</h2>
+						</div>
+						<div class="bg-white rounded-lg p-4 shadow-sm">
+							<div class="text-sm text-slate-500">Lịch khám hôm nay</div>
+							<h2 id="todayAppointments" class="text-2xl font-bold text-orange-600">0</h2>
+						</div>
+						<div class="bg-white rounded-lg p-4 shadow-sm">
+							<div class="text-sm text-slate-500">Lịch chờ xác nhận</div>
+							<h2 id="newContacts" class="text-2xl font-bold text-red-600">0</h2>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-2 bg-white rounded-lg p-4 shadow-sm">
+                            <h3 class="font-semibold mb-2">Biểu đồ lượt khám 30 ngày gần nhất</h3>
+                            <div id="chartPlaceholder" class="h-48">
+                                <canvas id="chartCanvas"></canvas>
+                            </div>
+                        </div>
+
+						
+						<div class="bg-white rounded-lg p-4 shadow-sm">
+							<h3 class="font-semibold mb-3 text-slate-700 flex items-center gap-2">
+								<span>📋</span> Hoạt động gần đây
+							</h3>
+							<div id="recentActivities"
+								class="text-sm text-slate-600 space-y-2 max-h-48 overflow-y-auto">
+								<div class="text-slate-400 text-center py-4">Đang tải...</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				
+				<section data-page="records" class="hidden">
+					<div class="flex items-center justify-between mb-4">
+						<h3 class="text-lg font-semibold">Quản lý Hồ sơ y tế</h3>
+						<button id="openAddHosoyte" class="bg-teal-500 text-white px-3 py-2 rounded-lg">
+							➕ Thêm hồ sơ y tế
+						</button>
+					</div>
+
+					<div class="bg-white rounded-lg shadow p-4">
+						<table class="min-w-full" id="hosoyteTable">
+							<thead>
+								<tr class="bg-gray-100 text-sm">
+									<th class="p-2 text-left">ID Hồ sơ</th>
+									<th class="p-2 text-left">ID Khách hàng</th>
+									<th class="p-2 text-center">Hành động</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<div id="hosoyteModal" class="fixed inset-0 flex items-center justify-center bg-black/40 hidden">
+					<div class="bg-white rounded-lg w-11/12 max-w-md p-6 shadow-lg">
+						<div class="flex items-center justify-between mb-4 border-b pb-2">
+							<h3 class="text-lg font-semibold text-slate-700">Thêm hồ sơ y tế</h3>
+							<button id="closeHosoyteModal" class="text-slate-500 hover:text-red-500">✖️</button>
+						</div>
+
+						<form id="hosoyteForm" class="space-y-4">
+							<div>
+								<label class="block text-sm font-medium mb-1">ID khách hàng</label>
+								<input id="idKHInput" type="number"
+									class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+									placeholder="Nhập ID khách hàng" required />
+							</div>
+
+							<div class="flex justify-end gap-2 pt-2 border-t">
+								<button type="button" id="cancelHosoyte"
+									class="px-4 py-2 border rounded hover:bg-gray-100">
+									Hủy
+								</button>
+								<button type="submit"
+									class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">
+									Lưu
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				<section data-page="history" class="hidden">
+					<div class="flex items-center justify-between mb-4">
+						<h3 class="text-lg font-semibold">Lịch sử khám bệnh</h3>
+						<button id="openAddLS" class="bg-teal-500 text-white px-3 py-2 rounded-lg">
+							➕ Thêm lịch sử
+						</button>
+					</div>
+
+					<div class="bg-white rounded-lg shadow p-4 overflow-x-auto">
+						<table class="min-w-full" id="lichsuTable">
+							<thead>
+								<tr class="bg-gray-100 text-sm">
+									<th class="p-2 text-left">ID</th>
+									<th class="p-2 text-left">Ngày khám</th>
+									<th class="p-2 text-left">Kết luận</th>
+									<th class="p-2 text-left">Chi tiết</th>
+									<th class="p-2 text-left">Bác sĩ</th>
+									<th class="p-2 text-left">Khoa</th>
+									<th class="p-2 text-left">Mã Hồ sơ</th>
+									<th class="p-2 text-center">Hành động</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<div id="lichsuModal" class="fixed inset-0 flex items-center justify-center bg-black/40 hidden">
+					<div class="bg-white rounded-lg w-11/12 max-w-md p-6 shadow-lg">
+						<div class="flex items-center justify-between mb-4 border-b pb-2">
+							<h3 id="lichsuTitle" class="text-lg font-semibold text-slate-700">Thêm lịch sử khám</h3>
+							<button id="closeLSModal" class="text-slate-500 hover:text-red-500">✖️</button>
+						</div>
+
+						<form id="lichsuForm" class="space-y-3">
+							<input type="hidden" id="idLS" />
+							<div>
+								<label class="block text-sm font-medium mb-1">Ngày khám</label>
+								<input id="ngayKhamLS" type="date" class="w-full border rounded px-3 py-2" required />
+							</div>
+							<div>
+								<label class="block text-sm font-medium mb-1">Kết luận</label>
+								<input id="ketLuanLS" type="text" class="w-full border rounded px-3 py-2" required />
+							</div>
+							<div>
+								<label class="block text-sm font-medium mb-1">Chi tiết</label>
+								<textarea id="chiTietLS" class="w-full border rounded px-3 py-2"></textarea>
+							</div>
+							<div>
+								<label class="block text-sm font-medium mb-1">Bác sĩ</label>
+								<select id="idBacSiLS" class="w-full border rounded px-3 py-2" required></select>
+							</div>
+							<div>
+								<label class="block text-sm font-medium mb-1">Khoa</label>
+								<select id="idKhoaLS" class="w-full border rounded px-3 py-2" required></select>
+							</div>
+							<div>
+								<label class="block text-sm font-medium mb-1">Mã Hồ sơ y tế</label>
+								<select id="idHoSoYTeLS" class="w-full border rounded px-3 py-2" required></select>
+							</div>
+							<div class="flex justify-end gap-2 pt-2 border-t">
+								<button type="button" id="cancelLS" class="px-4 py-2 border rounded hover:bg-gray-100">
+									Hủy
+								</button>
+								<button type="submit"
+									class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">
+									Lưu
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+				
+				<section data-page="appointments" class="hidden">
+					<div class="flex items-center justify-between mb-4">
+						<h3 class="text-lg font-semibold">Quản lý Lịch khám</h3>
+						<button id="openAddLich" class="bg-teal-500 text-white px-3 py-2 rounded-lg">
+							➕ Thêm lịch
+						</button>
+					</div>
+
+					<div class="bg-white rounded-lg shadow p-4">
+						<table class="min-w-full" id="lichTable">
+							<thead>
+								<tr class="bg-gray-100 text-sm">
+									<th class="p-2 text-left">ID</th>
+									<th class="p-2 text-left">ID Khách hàng</th>
+									<th class="p-2 text-left">Họ tên bệnh nhân</th>
+									<th class="p-2 text-left">Lý do</th>
+									<th class="p-2 text-left">Ngày khám</th>
+									<th class="p-2 text-left">Giờ khám</th>
+									<th class="p-2 text-left">Bác sĩ</th>
+									<th class="p-2 text-left">Khoa</th>
+									<th class="p-2 text-left">Trạng thái</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</section>
+
+
+				
+				<div id="lichModal" class="fixed inset-0 flex items-center justify-center bg-black/40 hidden">
+					<div class="bg-white rounded-lg w-11/12 max-w-2xl p-6 shadow-lg">
+						<div class="flex items-center justify-between mb-4 border-b pb-2">
+							<h3 class="text-lg font-semibold text-slate-700">Thêm lịch khám</h3>
+							<button id="closeLichModal" class="text-slate-500 hover:text-red-500">✖️</button>
+						</div>
+
+						<form id="lichForm" class="space-y-4">
+							<div class="grid grid-cols-2 gap-3">
+								<div>
+									<label class="block text-sm font-medium mb-1">ID Khách hàng</label>
+									<input id="idKH" type="number"
+										class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+										placeholder="Nhập ID khách hàng" required />
+								</div>
+
+								<div>
+									<label class="block text-sm font-medium mb-1">Họ tên bệnh nhân</label>
+									<input id="hoTen" type="text"
+										class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+										placeholder="Nhập họ tên bệnh nhân" required />
+								</div>
+							</div>
+
+							<div>
+								<label class="block text-sm font-medium mb-1">Lý do khám</label>
+								<textarea id="lyDo"
+									class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+									placeholder="Nhập lý do khám"></textarea>
+							</div>
+
+							<div class="grid grid-cols-2 gap-3">
+								<div>
+									<label class="block text-sm font-medium mb-1">Khoa</label>
+									<select id="idKhoa"
+										class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+										required></select>
+								</div>
+
+								<div>
+									<label class="block text-sm font-medium mb-1">Bác sĩ</label>
+									<select id="idBacSi"
+										class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+										required></select>
+								</div>
+							</div>
+
+							<div>
+								<label class="block text-sm font-medium mb-1">Ngày khám</label>
+								<input id="ngayKham" type="date"
+									class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-teal-400 outline-none"
+									required />
+							</div>
+
+							<div>
+								<label class="block text-sm font-medium mb-1">Khung giờ khám</label>
+								<input id="gioKham" type="hidden" />
+								<p id="gioKhamHint" class="admin-time-hint">Vui lòng chọn bác sĩ và ngày khám để xem khung giờ.</p>
+								<div id="gioKhamSlots" class="admin-time-slots" aria-live="polite"></div>
+								<div class="admin-time-legend">
+									<span><i class="legend-swatch legend-free"></i> Còn trống</span>
+									<span><i class="legend-swatch legend-booked"></i> Đã có lịch khám</span>
+								</div>
+							</div>
+
+							<div class="flex justify-end gap-2 pt-2 border-t">
+								<button type="button" id="cancelLich" class="px-4 py-2 border rounded hover:bg-gray-100">Hủy</button>
+								<button type="submit" class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Lưu</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+				
+				<section data-page="doctors" class="hidden">
+					<div class="flex items-center justify-between">
+						<h3 class="text-lg font-semibold">Quản lý Bác sĩ</h3>
+						<button class="bg-teal-500 text-white px-3 py-2 rounded-lg">
+							➕ Thêm bác sĩ
+						</button>
+					</div>
+
+					<div class="mt-4 bg-white rounded-lg shadow p-4">
+						<table class="min-w-full">
+							<thead>
+								<tr>
+									<th class="p-2 text-left">ID</th>
+									<th class="p-2 text-left">Họ tên</th>
+									<th class="p-2 text-left">Học vị</th>
+									<th class="p-2 text-left">Khoa</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+
+
+							<tbody>
+								<tr class="border-t">
+									<td class="p-2">Dr. Lê Anh</td>
+									<td class="p-2">Nội</td>
+									<td class="p-2">Active</td>
+									<td class="p-2">✏️ 🗑️</td>
+								</tr>
+								<tr class="border-t">
+									<td class="p-2">Dr. Trần Văn A</td>
+									<td class="p-2">Sản</td>
+									<td class="p-2">Active</td>
+									<td class="p-2">✏️ 🗑️</td>
+								</tr>
+								<tr class="border-t">
+									<td class="p-2">Dr. Nguyễn B</td>
+									<td class="p-2">Nhi</td>
+									<td class="p-2">Inactive</td>
+									<td class="p-2">✏️ 🗑️</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<section data-page="departments" class="hidden">
+					<div class="flex items-center justify-between mb-4">
+						<h3 class="text-lg font-semibold">Quản lý Khoa</h3>
+						<div>
+							<input id="searchDept" type="text" placeholder="🔍 Tìm khoa..."
+								class="border rounded px-3 py-2" />
+							<button id="openAddDept" class="bg-teal-500 text-white px-3 py-2 rounded-lg">
+								➕ Thêm khoa
+							</button>
+							<button id="refreshDept" class="bg-white border px-3 py-2 rounded-lg ml-2">
+								🔄 Làm mới
+							</button>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-lg shadow p-4">
+						<table id="deptTable" class="min-w-full">
+							<thead>
+								<tr class="bg-gray-100">
+									<th class="p-2 text-left">ID</th>
+									<th class="p-2 text-left">Tên Khoa</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<section data-page="ai" class="hidden">
+					<div class="flex items-center justify-between">
+						<h3 class="text-lg font-semibold">Bảo trì Tư vấn AI</h3>
+						<div class="text-sm text-slate-500">
+							Quản lý intents, mẫu hỏi/đáp
+						</div>
+					</div>
+
+					<div class="mt-4 bg-white rounded-lg shadow p-4">
+						<table class="min-w-full">
+							<thead>
+								<tr>
+									<th class="p-2 text-left">Intent</th>
+									<th class="p-2 text-left">Mô tả</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-t">
+									<td class="p-2">Hẹn lịch</td>
+									<td class="p-2">Hỗ trợ đặt lịch khám</td>
+									<td class="p-2">Edit · Train</td>
+								</tr>
+								<tr class="border-t">
+									<td class="p-2">Triệu chứng đau ngực</td>
+									<td class="p-2">Hỏi về dấu hiệu đau ngực</td>
+									<td class="p-2">Edit · Train</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<section data-page="contacts" class="hidden">
+					<div class="flex items-center justify-between">
+						<h3 class="text-lg font-semibold">Bảo trì Liên hệ</h3>
+						<div class="text-sm text-slate-500">Xem và xử lý phản hồi</div>
+					</div>
+
+					<div class="mt-4 bg-white rounded-lg shadow p-4">
+						<table class="min-w-full">
+							<thead>
+								<tr>
+									<th class="p-2 text-left">Email</th>
+									<th class="p-2 text-left">Nội dung</th>
+									<th class="p-2 text-left">Trạng thái</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-t">
+									<td class="p-2">user1@example.com</td>
+									<td class="p-2">Không nhận được mã xác thực</td>
+									<td class="p-2">Mới</td>
+									<td class="p-2">Xử lý</td>
+								</tr>
+								<tr class="border-t">
+									<td class="p-2">user2@example.com</td>
+									<td class="p-2">Yêu cầu huỷ lịch</td>
+									<td class="p-2">Đã xử lý</td>
+									<td class="p-2">—</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				
+				<section data-page="accounts" class="hidden">
+					<div class="flex items-center justify-between">
+						<h3 class="text-lg font-semibold">Quản lý Tài khoản</h3>
+					</div>
+
+					<div class="mt-4 bg-white rounded-lg shadow p-4">
+						<table class="min-w-full">
+							<thead>
+								<tr>
+									<th class="p-2 text-left">ID</th>
+									<th class="p-2 text-left">Họ tên</th>
+									<th class="p-2 text-left">Giới tính</th>
+									<th class="p-2 text-left">Số điện thoại</th>
+									<th class="p-2 text-left">Hành động</th>
+								</tr>
+							</thead>
+							<tbody id="accountList">
+								
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</section>
+
+			
+			<footer class="admin-footer">
+                <strong>Icare Clinic</strong> · Hệ thống quản trị nội bộ
+            </footer>
+            </div>
+		</main>
+	</div>
+
+	
+	<div id="recordModal" class="fixed inset-0 flex items-center justify-center bg-black/40 hidden">
+		<div class="bg-white rounded-lg w-11/12 md:w-2/3 p-6">
+			<div class="flex items-center justify-between mb-4">
+				<h3 class="text-lg font-semibold">Thêm / Sửa Hồ sơ</h3>
+				<button id="closeModal" class="text-slate-500">✖️</button>
+			</div>
+
+			<form id="recordForm" class="grid grid-cols-2 gap-4">
+				<div>
+					<label class="text-sm">Họ tên</label>
+					<input name="name" class="w-full border rounded px-3 py-2" />
+				</div>
+				<div>
+					<label class="text-sm">Ngày sinh</label>
+					<input name="dob" type="date" class="w-full border rounded px-3 py-2" />
+				</div>
+				<div>
+					<label class="text-sm">Giới tính</label>
+					<select name="gender" class="w-full border rounded px-3 py-2">
+						<option>Nam</option>
+						<option>Nữ</option>
+					</select>
+				</div>
+				<div>
+					<label class="text-sm">Số điện thoại</label>
+					<input name="phone" class="w-full border rounded px-3 py-2" />
+				</div>
+				<div class="col-span-2">
+					<label class="text-sm">Chẩn đoán</label>
+					<textarea name="diagnosis" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+				</div>
+
+				<div class="col-span-2 flex justify-end gap-2 mt-2">
+					<button type="button" id="cancelModal" class="px-4 py-2 border rounded">
+						Hủy
+					</button>
+					<button type="submit" class="px-4 py-2 bg-teal-500 text-white rounded">
+						Lưu
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+        const navButtons = document.querySelectorAll("aside button[data-page]");
+        const pages = document.querySelectorAll("section[data-page]");
+        const title = document.getElementById("pageTitle");
+
+        function showPage(name) {
+            pages.forEach((p) => {
+                if (p.dataset.page === name) p.classList.remove("hidden");
+                else p.classList.add("hidden");
+            });
+            navButtons.forEach((b) => {
+                if (b.dataset.page === name) b.classList.add("bg-slate-700");
+                else b.classList.remove("bg-slate-700");
+            });
+            const labels = {
+                dashboard: "Tổng quan hệ thống",
+                records: "Quản lý Hồ sơ y tế",
+                history: "Lịch sử khám bệnh",
+                appointments: "Quản lý Lịch khám",
+                doctors: "Quản lý Bác sĩ",
+                departments: "Quản lý Khoa",
+                ai: "Tư vấn AI",
+                contacts: "Liên hệ",
+                accounts: "Quản lý Tài khoản",
+            };
+            title.textContent = labels[name] || "Hệ thống quản trị";
+        }
+
+        navButtons.forEach((b) => b.addEventListener("click", () => showPage(b.dataset.page)));
+        showPage("records");
+
+        document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+            e.preventDefault();
+            AppAuth.logout();
+        });
+    </script>
+
+	<div id="deptModal" class="fixed inset-0 flex items-center justify-center bg-black/40 hidden">
+		<div class="bg-white rounded-lg w-11/12 max-w-md p-6">
+			<div class="flex items-center justify-between mb-4">
+				<h3 id="deptModalTitle" class="text-lg font-semibold">Thêm khoa</h3>
+				<button id="closeDeptModal" class="text-slate-500">✖️</button>
+			</div>
+			<form id="deptForm" class="space-y-3">
+				<input type="hidden" id="idKhoa" />
+				<div>
+					<label class="block text-sm">Tên khoa <span class="text-red-500">*</span></label>
+					<input id="tenKhoa" class="w-full border rounded px-3 py-2" required />
+				</div>
+				<div class="flex justify-end gap-2">
+					<button type="button" id="cancelDept" class="px-4 py-2 border rounded">
+						Hủy
+					</button>
+					<button type="submit" class="px-4 py-2 bg-teal-500 text-white rounded">
+						Lưu
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script src="quan-tri.js"></script>
+</body>
+
+</html>

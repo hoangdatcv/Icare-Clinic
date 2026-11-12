@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer"><title>Icare Clinic — Xác minh email</title>
+  <link rel="stylesheet" href="../assets/css/xac-thuc.css">
+  <script src="../assets/js/phien-dang-nhap.js"></script><script src="xac-minh-email.js" defer></script>
+</head>
+<body><main class="auth-card">
+  <a class="auth-brand" href="../">Icare Clinic</a><h1>Xác minh email</h1>
+  <p>Xác minh email để bảo vệ tài khoản và sử dụng chức năng quên mật khẩu.</p>
+  <form id="verifyEmailForm" hidden><button type="submit">Xác minh email của tôi</button></form>
+  <p id="verifyEmailMessage" class="auth-message" role="status" aria-live="polite" hidden></p>
+  <form id="resendEmailForm">
+    <label for="resendEmail">Email đã đăng ký</label>
+    <input id="resendEmail" type="email" autocomplete="email" maxlength="254" placeholder="tenban@gmail.com" required>
+    <button type="submit">Gửi lại liên kết xác minh</button>
+    <p class="hint">Liên kết hết hạn sau 15 phút. Hãy kiểm tra cả thư rác. Email mới đang chờ thay đổi cần được gửi lại từ phần Email tài khoản trong hồ sơ.</p>
+  </form>
+  <a id="verifyLoginLink" class="back-link">Quay lại đăng nhập</a>
+</main></body></html>

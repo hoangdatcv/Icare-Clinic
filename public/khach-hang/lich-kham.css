@@ -1,0 +1,106 @@
+:root {
+    --blue-900: #073b79;
+    --blue-800: #0753a8;
+    --blue-700: #0b66d4;
+    --blue-600: #1d82e7;
+    --blue-500: #2fa7ef;
+    --blue-100: #eaf5ff;
+    --text: #16243a;
+    --muted: #5d6b7d;
+    --line: #d7e8f7;
+    --red: #ec2f37;
+    --shadow: 0 18px 48px rgba(14,73,131,.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--text); background: #f5f9fd; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; }
+
+/* Đầu trang. */
+.site-header { background: rgba(255,255,255,.98); border-bottom: 1px solid #e5f0fb; position: relative; z-index: 50; }
+.header-inner { max-width: 1480px; min-height: 124px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand img { width: 470px; height: auto; }
+.header-actions { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.hotline-wrap { display: flex; align-items: center; gap: 13px; }
+.header-icon { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: var(--blue-700); background: #f6fbff; border: 1px solid #b9d9f7; font-size: 17px; }
+.hotline { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: .2px; color: #10233f; }
+.hotline span { color: var(--red); }
+.quick-nav { display: flex; align-items: center; gap: 14px; }
+.quick-nav a { color: var(--blue-800); text-decoration: none; font-size: 14.5px; font-weight: 700; transition: .2s ease; }
+.quick-nav a i { margin-right: 6px; }
+.quick-nav a:hover { color: var(--blue-600); }
+.nav-divider { width: 1px; height: 18px; background: #c9dced; }
+
+.page-hero { overflow: hidden; position: relative; background: radial-gradient(circle at 84% 22%, rgba(55,165,239,.17), transparent 27%), linear-gradient(110deg, #f9fcff 0%, #edf7ff 55%, #f9fcff 100%); border-bottom: 1px solid #e3eff8; }
+.page-hero::after { content: ""; position: absolute; width: 210px; height: 210px; right: 9%; bottom: -135px; border: 1px solid rgba(21,126,215,.20); border-radius: 50%; }
+.page-hero-inner { max-width: 1240px; min-height: 250px; margin: 0 auto; padding: 42px 30px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 2; }
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 14px; border: 1px solid #cfe6fa; border-radius: 999px; background: rgba(255,255,255,.78); color: var(--blue-700); font-size: 13px; font-weight: 700; }
+.page-hero h1 { margin: 14px 0 8px; color: #084d9c; font-size: clamp(38px, 4.2vw, 55px); line-height: 1.05; letter-spacing: -1.4px; }
+.page-hero p { max-width: 760px; margin: 0; color: #53677d; font-size: 17px; }
+.back-booking { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 9px; padding: 14px 19px; border-radius: 13px; background: linear-gradient(110deg, #0964c8, #168fe7); color: #fff; text-decoration: none; font-weight: 800; box-shadow: 0 13px 30px rgba(9,100,200,.20); transition: .2s ease; }
+.back-booking:hover { transform: translateY(-2px); box-shadow: 0 17px 36px rgba(9,100,200,.25); }
+
+.appointments-shell { max-width: 1240px; margin: 0 auto; padding: 36px 30px 58px; }
+.appointments-card { background: #fff; border: 1px solid #e0ecf6; border-radius: 22px; padding: 27px 28px 30px; box-shadow: var(--shadow); }
+.card-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.section-icon { width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center; border-radius: 14px; color: var(--blue-700); background: #ecf6ff; border: 1px solid #d5eafb; font-size: 19px; }
+.card-heading p { margin: 0; color: #6e8094; text-transform: uppercase; letter-spacing: .8px; font-size: 11.5px; font-weight: 800; }
+.card-heading h2 { margin: 1px 0 0; color: #153c65; font-size: 23px; }
+.table-wrap { width: 100%; overflow-x: auto; border: 1px solid #e2ecf5; border-radius: 16px; }
+table { width: 100%; min-width: 820px; border-collapse: collapse; background: #fff; }
+thead { color: #fff; background: linear-gradient(110deg, #0b63c4, #1686df); }
+thead th { padding: 15px 14px; text-align: center; font-size: 13.5px; letter-spacing: .15px; }
+tbody td { padding: 15px 14px; border-bottom: 1px solid #e8eff5; text-align: center; color: #425970; font-size: 14.5px; }
+tbody tr { transition: .18s ease; }
+tbody tr:hover { background: #f1f8ff; }
+tbody tr:last-child td { border-bottom: 0; }
+button { padding: 8px 13px; border: 0; border-radius: 9px; cursor: pointer; font-weight: 800; transition: .18s ease; }
+button.huy { color: #fff; background: #e4444d; box-shadow: 0 6px 13px rgba(203,53,63,.14); }
+button.huy:hover { background: #d73741; transform: translateY(-1px); }
+button.huy:disabled { background: #adb6bf; cursor: not-allowed; box-shadow: none; transform: none; }
+
+/* Chân trang. */
+.site-footer { position: relative; overflow: hidden; color: #fff; background: radial-gradient(circle at 86% 40%, rgba(54,172,247,.13), transparent 22%), linear-gradient(118deg, #0863bc 0%, #0752a7 52%, #064892 100%); }
+.site-footer::before { content: ""; position: absolute; inset: 0; opacity: .13; background-image: linear-gradient(30deg, transparent 42%, rgba(255,255,255,.18) 43%, rgba(255,255,255,.18) 44%, transparent 45%), linear-gradient(150deg, transparent 42%, rgba(255,255,255,.13) 43%, rgba(255,255,255,.13) 44%, transparent 45%); background-size: 72px 62px; }
+.footer-inner { position: relative; z-index: 2; max-width: 1480px; margin: 0 auto; padding: 34px 48px 36px; display: grid; grid-template-columns: 370px 1px 1fr; gap: 52px; align-items: center; }
+.footer-brand img { width: 330px; }
+.footer-brand > p { max-width: 320px; margin: 9px 0 16px; color: #d8e9f9; font-size: 14px; line-height: 1.55; }
+.socials { display: flex; gap: 12px; }
+.socials span { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: #0a5cae; font-size: 14px; font-weight: 800; }
+.socials .zalo-text { font-size: 10px; }
+.footer-divider { height: 170px; background: rgba(255,255,255,.38); }
+.location { min-width: 0; }
+.footer-title { margin: 0 0 12px; font-size: 18px; font-weight: 800; letter-spacing: .2px; }
+.location-content { display: flex; align-items: flex-start; gap: 12px; margin: 9px 0; }
+.location-content i { margin-top: 4px; color: #fff; width: 18px; text-align: center; }
+.location-content p { margin: 0; color: #cfe3f6; line-height: 1.45; font-size: 14.5px; }
+.location-content span { color: #fff; }
+.footer-medical-mark { position: absolute; right: 85px; bottom: -46px; font-size: 190px; color: rgba(63,176,248,.17); transform: rotate(-2deg); }
+
+@media (max-width: 900px) {
+    .header-inner { padding: 16px 24px; min-height: auto; }
+    .brand img { width: 340px; }
+    .hotline { font-size: 17px; }
+    .page-hero-inner { padding: 38px 24px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; padding: 30px 24px; }
+    .footer-divider { width: 100%; height: 1px; }
+}
+@media (max-width: 620px) {
+    .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px; }
+    .brand img { width: min(350px, 90vw); }
+    .header-actions { width: 100%; align-items: flex-start; }
+    .header-icon { display: none; }
+    .hotline { font-size: 14px; }
+    .quick-nav { gap: 9px; flex-wrap: wrap; }
+    .quick-nav a { font-size: 13px; }
+    .page-hero-inner { min-height: 220px; padding: 32px 16px; align-items: flex-start; flex-direction: column; gap: 20px; }
+    .page-hero h1 { font-size: 38px; }
+    .page-hero p { font-size: 15px; }
+    .appointments-shell { padding: 26px 16px 42px; }
+    .appointments-card { padding: 20px 16px; }
+    .footer-inner { padding: 26px 16px !important; }
+    .footer-brand img { width: 300px; }
+}

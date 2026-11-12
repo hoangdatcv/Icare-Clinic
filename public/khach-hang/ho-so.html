@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tài khoản của tôi - Icare Clinic</title>
+		<link rel="stylesheet" href="ho-so.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+	<script src="../assets/js/phien-dang-nhap.js" data-role="customer"></script>
+<link rel="stylesheet" href="../assets/css/email-tai-khoan.css">
+</head>
+	<body>
+		<header class="site-header">
+			<div class="header-inner">
+				<a
+					class="brand"
+					href="trang-chu.html"
+					aria-label="Trang chủ Icare Clinic"
+				>
+					<img src="../assets/images/icare-clinic.svg" alt="Icare Clinic" />
+				</a>
+
+				<div class="header-actions">
+					<div class="hotline-wrap">
+						<span class="header-icon"><i class="fa-solid fa-phone"></i></span>
+						<p class="hotline">HOTLINE: <span>1900 6422</span></p>
+					</div>
+					<a class="home-link" href="trang-chu.html">
+						<i class="fa-solid fa-house"></i>
+						<span>Trang chủ</span>
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="account-hero">
+				<div class="account-hero-inner">
+					<div>
+						<span class="eyebrow"
+							><i class="fa-solid fa-shield-heart"></i> Không gian cá nhân an
+							toàn</span
+						>
+						<h1>Tài khoản của tôi</h1>
+						<p>
+							Quản lý thông tin cá nhân, hồ sơ y tế và lịch khám của bạn tại
+							Icare Clinic.
+						</p>
+					</div>
+					<div class="hero-mark" aria-hidden="true">
+						<i class="fa-solid fa-user-shield"></i>
+					</div>
+				</div>
+			</section>
+
+			<section class="account-shell">
+				<div class="container">
+					<aside class="account-left">
+						<div class="user-card">
+							<div class="user-menu-content">
+								<div class="avatar-placeholder">
+									<i class="fa-regular fa-user"></i>
+								</div>
+								<div class="user-summary">
+									<span class="user-kicker">Tài khoản bệnh nhân</span>
+									<button class="user-info-btn" id="userNameDisplay">
+										[Tên khách hàng]
+									</button>
+									<span class="user-status"
+										><i class="fa-solid fa-circle-check"></i> Đang hoạt
+										động</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<nav class="side-nav" aria-label="Điều hướng tài khoản">
+							<ul>
+								<li class="nav-group">
+									<div class="nav-section">
+										<span class="nav-icon"
+											><i class="fa-regular fa-user"></i
+										></span>
+										<span>Tài khoản của tôi</span>
+									</div>
+									<ul>
+										<li>
+											<a href="#profile" id="navProfile" class="nav-item active"
+												><i class="fa-regular fa-id-card"></i
+												><span>Hồ sơ</span></a
+											>
+										</li>
+										<li>
+											<a href="#password" id="navPassword" class="nav-item"
+												><i class="fa-solid fa-key"></i
+												><span>Đổi mật khẩu</span></a
+											>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-group">
+									<div class="nav-section">
+										<span class="nav-icon"
+											><i class="fa-solid fa-file-medical"></i
+										></span>
+										<span>Hồ sơ y tế</span>
+									</div>
+									<ul>
+										<li>
+											<a
+												href="#medical-history"
+												id="navMedicalHistory"
+												class="nav-item"
+												><i class="fa-solid fa-notes-medical"></i
+												><span>Lịch sử khám bệnh</span></a
+											>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-group nav-group-single">
+									<a href="#appointments" id="navAppointments" class="nav-item">
+										<i class="fa-regular fa-calendar-check"></i
+										><span>Lịch khám</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+						<div class="sidebar-help">
+							<span class="help-icon"><i class="fa-solid fa-headset"></i></span>
+							<div>
+								<strong>Cần hỗ trợ?</strong>
+								<p>Liên hệ tổng đài <b>1900 6422</b></p>
+							</div>
+						</div>
+					</aside>
+
+					<div class="account-right">
+						<section id="profile-section" class="content-section active">
+							<div class="section-heading">
+								<div class="section-icon">
+									<i class="fa-regular fa-user"></i>
+								</div>
+								<div>
+									<h2>Hồ sơ của tôi</h2>
+									<div class="security-note">
+										Quản lý thông tin hồ sơ để bảo mật tài khoản
+									</div>
+								</div>
+							</div>
+							<hr class="dim-line" />
+
+							<form id="profileForm" class="profile-form">
+								<div class="info-row">
+									<label>Họ tên</label>
+									<span id="display_hoten" class="info-display"
+										>Nguyễn Văn A</span
+									>
+									<input
+										id="input_hoten"
+										type="text"
+										class="info-input hidden"
+										placeholder="Nhập họ tên"
+									/>
+									<button type="button" class="btn-change">Thay đổi</button>
+								</div>
+
+								<div class="info-row">
+									<label>Số điện thoại</label>
+									<span id="display_sdt" class="info-display">********01</span>
+									<input
+										id="input_sdt"
+										type="text"
+										class="info-input hidden"
+										disabled
+									/>
+									<button
+										type="button"
+										class="btn-change"
+										style="visibility: hidden"
+									>
+										Thay đổi
+									</button>
+								</div>
+
+								<div class="info-row">
+									<label>Giới tính</label>
+									<div class="gender-group">
+										<label
+											><input type="radio" name="gioitinh" value="Nam" />
+											<span>Nam</span></label
+										>
+										<label
+											><input type="radio" name="gioitinh" value="Nữ" />
+											<span>Nữ</span></label
+										>
+										<label
+											><input type="radio" name="gioitinh" value="Khác" />
+											<span>Khác</span></label
+										>
+									</div>
+								</div>
+
+								<div class="info-row">
+									<label>Ngày sinh</label>
+									<span id="display_ngaysinh" class="info-display not-available"
+										>Chưa có</span
+									>
+									<input
+										id="input_ngaysinh"
+										type="date"
+										class="info-input hidden"
+									/>
+									<button type="button" class="btn-change">Thay đổi</button>
+								</div>
+
+								<div class="info-row">
+									<label>Căn cước công dân</label>
+									<span id="display_cccd" class="info-display not-available"
+										>Chưa có</span
+									>
+									<input
+										id="input_cccd"
+										type="text"
+										class="info-input hidden"
+										placeholder="Nhập CCCD"
+									/>
+									<button type="button" class="btn-change">Thay đổi</button>
+								</div>
+
+								<div class="info-row">
+									<label>Địa chỉ</label>
+									<span id="display_diachi" class="info-display not-available"
+										>Chưa có</span
+									>
+									<input
+										id="input_diachi"
+										type="text"
+										class="info-input hidden"
+										placeholder="Nhập địa chỉ"
+									/>
+									<button type="button" class="btn-change">Thay đổi</button>
+								</div>
+
+								<div class="save-area">
+									<button
+										type="submit"
+										id="saveProfileBtn"
+										class="btn primary disabled"
+										disabled
+									>
+										<i class="fa-regular fa-floppy-disk"></i> Lưu thay đổi
+									</button>
+									<button
+										type="button"
+										id="cancelEditBtn"
+										class="btn secondary hidden"
+									>
+										Hủy
+									</button>
+								</div>
+							</form>
+  <section class="account-email-panel" data-account-email>
+    <h2>Email tài khoản</h2>
+    <p data-email-current>Đang tải email…</p><p class="email-status" data-email-status></p>
+    <p data-email-pending hidden></p>
+    <form data-email-form>
+      <label for="accountEmail">Thêm hoặc thay đổi email</label><input id="accountEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="tenban@gmail.com" required>
+      <label for="accountEmailPassword">Mật khẩu hiện tại</label><input id="accountEmailPassword" name="currentPassword" type="password" autocomplete="current-password" required>
+      <button type="submit">Gửi email xác minh</button>
+    </form>
+    <p class="email-note">Mở liên kết trong email để xác minh. Email mới chỉ thay thế email hiện tại sau khi xác minh thành công. Liên kết có hiệu lực 15 phút.</p>
+    <p data-email-message role="status" aria-live="polite" hidden></p>
+  </section>
+						</section>
+
+						<section id="password-section" class="content-section">
+							<div class="section-heading">
+								<div class="section-icon">
+									<i class="fa-solid fa-shield-halved"></i>
+								</div>
+								<div>
+									<h2>Đổi mật khẩu</h2>
+									<div class="security-note">
+										Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho
+										người khác
+									</div>
+								</div>
+							</div>
+							<hr class="dim-line" />
+
+							<div class="password-layout">
+								<div class="password-tip">
+									<div class="tip-icon"><i class="fa-solid fa-lock"></i></div>
+									<h3>Bảo vệ tài khoản</h3>
+									<p>
+										Nên sử dụng mật khẩu dễ nhớ với bạn nhưng khó đoán với người
+										khác.
+									</p>
+									<ul>
+										<li>
+											<i class="fa-solid fa-check"></i> Không dùng lại mật khẩu
+											cũ
+										</li>
+										<li>
+											<i class="fa-solid fa-check"></i> Không chia sẻ mật khẩu
+										</li>
+										<li>
+											<i class="fa-solid fa-check"></i> Đăng xuất trên thiết bị
+											lạ
+										</li>
+									</ul>
+								</div>
+
+								<form id="passForm" class="password-form">
+									<div class="pass-row">
+										<div class="pass-input">
+											<label for="passOld">Mật khẩu cũ</label>
+											<input
+												id="passOld"
+												type="password"
+												autocomplete="current-password"
+												class="required-input"
+												placeholder="Nhập mật khẩu hiện tại"
+											/>
+											<span class="toggle-password"
+												><i class="fa-regular fa-eye"></i
+											></span>
+										</div>
+										<div class="error" id="passOldErr"></div>
+									</div>
+
+									<div class="pass-row">
+										<div class="pass-input">
+											<label for="passNew">Mật khẩu mới</label>
+											<input
+												id="passNew"
+												type="password"
+												autocomplete="new-password"
+												class="required-input"
+												placeholder="Nhập mật khẩu mới"
+											/>
+											<span class="toggle-password"
+												><i class="fa-regular fa-eye"></i
+											></span>
+										</div>
+										<div class="error" id="passNewErr"></div>
+									</div>
+
+									<div class="pass-row">
+										<div class="pass-input">
+											<label for="passConfirm">Xác nhận mật khẩu</label>
+											<input
+												id="passConfirm"
+												type="password"
+												autocomplete="new-password"
+												class="required-input"
+												placeholder="Nhập lại mật khẩu mới"
+											/>
+											<span class="toggle-password"
+												><i class="fa-regular fa-eye"></i
+											></span>
+										</div>
+										<div class="error" id="passConfirmErr"></div>
+									</div>
+
+									<div class="save-area-pass">
+										<button
+											type="submit"
+											id="savePasswordBtn"
+											class="btn primary disabled"
+											disabled
+										>
+											<i class="fa-solid fa-key"></i> Đổi mật khẩu
+										</button>
+										<button
+											type="button"
+											id="cancelPasswordBtn"
+											class="btn secondary hidden"
+										>
+											Hủy
+										</button>
+									</div>
+								</form>
+							</div>
+						</section>
+
+						<section id="medical-history-section" class="content-section">
+							<div class="section-heading">
+								<div class="section-icon">
+									<i class="fa-solid fa-file-waveform"></i>
+								</div>
+								<div>
+									<h2>Hồ sơ y tế</h2>
+									<div class="security-note">
+										Xem và lưu trữ kết quả khám bệnh
+									</div>
+								</div>
+							</div>
+							<hr class="dim-line" />
+
+							<div class="medical-record-container">
+								<div class="medical-record-list">
+									<div class="table-toolbar">
+										<div class="toolbar-title">
+											<strong>Lịch sử khám bệnh</strong>
+											<span>Chọn một lần khám để xem chi tiết</span>
+										</div>
+										<div class="sort-options">
+											<button class="btn secondary">
+												<i class="fa-solid fa-arrow-down-wide-short"></i> Sắp
+												xếp theo
+												<i class="fa-solid fa-chevron-down"></i>
+											</button>
+											<div class="sort-menu hidden">
+												<a href="#"
+													>Ngày khám <i class="fa-solid fa-arrow-down"></i
+												></a>
+												<a href="#"
+													>Ngày khám <i class="fa-solid fa-arrow-up"></i
+												></a>
+											</div>
+										</div>
+									</div>
+
+									<div class="table-scroll">
+										<table class="medical-history-table">
+											<thead>
+												<tr>
+													<th style="width: 15%">Ngày khám</th>
+													<th style="width: 20%">Bác sĩ</th>
+													<th style="width: 20%">Khoa</th>
+													<th style="width: 45%">Kết luận</th>
+												</tr>
+											</thead>
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="medical-record-detail">
+									<div class="detail-empty-icon">
+										<i class="fa-solid fa-notes-medical"></i>
+									</div>
+									<p class="detail-placeholder">Chi tiết kết quả khám</p>
+								</div>
+							</div>
+						</section>
+
+						<section id="appointments-section" class="content-section">
+							<div class="section-heading">
+								<div class="section-icon">
+									<i class="fa-regular fa-calendar-check"></i>
+								</div>
+								<div>
+									<h2>Lịch khám</h2>
+									<div class="security-note">Theo dõi lịch khám đã đặt</div>
+								</div>
+							</div>
+							<hr class="dim-line" />
+
+							<div
+								class="appointments-container"
+								id="appointmentsListContainer"
+							>
+								<nav class="appointment-filter-nav" aria-label="Lọc lịch khám">
+									<button class="filter-btn active" data-status="all">
+										Tất cả
+									</button>
+									<button class="filter-btn" data-status="pending">
+										Chờ xác nhận
+									</button>
+									<button class="filter-btn" data-status="confirmed">
+										Đã xác nhận
+									</button>
+									<button class="filter-btn" data-status="rejected">
+										Từ chối
+									</button>
+									<button class="filter-btn" data-status="cancelled">
+										Đã hủy
+									</button>
+								</nav>
+
+								<div class="table-scroll">
+									<table class="appointments-table">
+										<thead>
+											<tr>
+												<th style="width: 25%">Bác sĩ</th>
+												<th style="width: 25%">Khoa</th>
+												<th style="width: 15%">Ngày</th>
+												<th style="width: 10%">Giờ</th>
+												<th style="width: 25%">Trạng thái</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+								</div>
+
+								<p
+									id="no-appointments-message"
+									class="empty-message"
+									style="display: none"
+								>
+									<i class="fa-regular fa-calendar-xmark"></i>
+									<span>Bạn chưa có lịch khám nào.</span>
+								</p>
+							</div>
+
+							<div
+								class="appointments-container appointment-detail-view"
+								id="appointmentDetailView"
+							>
+								<a
+									href="#"
+									class="back-to-list-link"
+									id="backToAppointmentsList"
+								>
+									<i class="fa-solid fa-arrow-left"></i> Quay lại danh sách lịch
+									khám
+								</a>
+
+								<div
+									class="appointment-progress-bar"
+									id="appointmentProgressBar"
+								>
+									<div
+										class="progress-step active"
+										data-step="đã đặt lịch"
+										id="step_placed"
+									>
+										<div class="circle"><i class="fa-solid fa-check"></i></div>
+										<p>Đã đặt lịch</p>
+									</div>
+									<div
+										class="progress-step"
+										data-step="chờ xác nhận"
+										id="step_pending"
+									>
+										<div class="circle">
+											<i class="fa-solid fa-hourglass-half"></i>
+										</div>
+										<p>Chờ xác nhận</p>
+									</div>
+									<div class="progress-line line-1" id="line1"></div>
+
+									<div
+										class="progress-step"
+										data-step="đã xác nhận"
+										id="step_confirmed"
+									>
+										<div class="circle"><i class="fa-solid fa-check"></i></div>
+										<p>Đã xác nhận</p>
+									</div>
+									<div class="progress-line line-2" id="line2"></div>
+
+									<div
+										class="progress-step"
+										data-step="đã hủy"
+										id="step_cancelled"
+									>
+										<div class="circle"><i class="fa-solid fa-xmark"></i></div>
+										<p>Đã hủy</p>
+									</div>
+
+									<div
+										class="progress-step"
+										data-step="từ chối"
+										id="step_rejected"
+									>
+										<div class="circle"><i class="fa-solid fa-ban"></i></div>
+										<p>Từ chối</p>
+									</div>
+								</div>
+
+								<div id="appointmentDetailContent" class="detail-box">
+									<div class="detail-box-heading">
+										<span class="section-icon small"
+											><i class="fa-solid fa-stethoscope"></i
+										></span>
+										<div>
+											<strong>Thông tin lịch khám</strong
+											><span>Thông tin chi tiết của lịch bạn đã chọn</span>
+										</div>
+									</div>
+
+									<div id="appointmentForm" class="appointment-form-grid">
+										<div class="appointment-row">
+											<label>Mã lịch khám</label>
+											<span
+												id="detail_idLichKham"
+												class="appointment-display"
+											></span>
+										</div>
+										<div class="appointment-row">
+											<label>Họ tên</label>
+											<span
+												id="detail_hoTen"
+												class="appointment-display"
+											></span>
+										</div>
+										<div class="appointment-row wide">
+											<label>Lý do</label>
+											<span id="detail_lyDo" class="appointment-display"></span>
+										</div>
+										<div class="appointment-row">
+											<label>Bác sĩ</label>
+											<span
+												id="detail_tenBacSi"
+												class="appointment-display"
+											></span>
+										</div>
+										<div class="appointment-row">
+											<label>Khoa</label>
+											<span
+												id="detail_tenKhoa"
+												class="appointment-display"
+											></span>
+										</div>
+										<div class="appointment-row">
+											<label>Ngày khám</label>
+											<span
+												id="detail_ngayKham"
+												class="appointment-display"
+											></span>
+										</div>
+										<div class="appointment-row">
+											<label>Giờ khám</label>
+											<span
+												id="detail_gioKham"
+												class="appointment-display"
+											></span>
+										</div>
+									</div>
+
+									<div
+										id="cancelAppointmentArea"
+										class="cancel-appointment-area"
+									>
+										<button
+											type="button"
+											id="cancelAppointmentBtn"
+											class="btn danger"
+										>
+											<i class="fa-regular fa-calendar-xmark"></i> Hủy lịch khám
+										</button>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<div class="footer-brand">
+					<img src="../assets/images/icare-clinic-white.svg" alt="Icare Clinic" />
+					<p>
+						Mang đến dịch vụ chăm sóc sức khỏe chất lượng cao với sự tận tâm và
+						chuyên nghiệp.
+					</p>
+				</div>
+				<div class="footer-divider"></div>
+				<div class="footer-contact">
+					<p class="footer-title">Icare Clinic</p>
+					<div>
+						<i class="fa-solid fa-location-dot"></i
+						><span
+							>Cơ sở Tôn Thất Tùng: Số 1 Tôn Thất Tùng, Phường Trung Tự, Quận
+							Đống Đa, Hà Nội</span
+						>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i
+						><span
+							>Cơ sở Hoàng Mai: Số 587, Tam Trinh, Yên Sở, Hoàng Mai, Hà
+							Nội</span
+						>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i
+						><span
+							>Cơ sở Cầu Giấy: Số 10 Trương Công Giai, Cầu Giấy, Hà Nội</span
+						>
+					</div>
+					<div>
+						<i class="fa-solid fa-envelope"></i><span>icare@hospital.vn</span>
+					</div>
+					<div><i class="fa-solid fa-phone"></i><span>1900 6422</span></div>
+				</div>
+			</div>
+		</footer>
+
+		<div id="customToast">
+			<div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+			<div class="toast-body">Cập nhật thành công</div>
+		</div>
+
+		<script src="ho-so.js"></script>
+	<script src="../assets/js/email-tai-khoan.js"></script>
+</body>
+</html>

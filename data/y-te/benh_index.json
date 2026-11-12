@@ -1,0 +1,798 @@
+{
+  "source_file": "Benh(3).md",
+  "source_sha256": "beea54159cd8f5aa875b3defcb25afb00c3949b15cb96237e6eac81f92a0d980",
+  "articles": 79,
+  "chunks": 1394,
+  "diseases": [
+    {
+      "disease_id": "B001",
+      "name": "Bệnh Alzheimer",
+      "title": "Bệnh Alzheimer: Nguyên nhân, triệu chứng, điều trị và phòng ngừa",
+      "start_line": 1,
+      "end_line": 94,
+      "chunks": 37,
+      "retrievable_chunks": 36,
+      "heading_key": "benh-alzheimer"
+    },
+    {
+      "disease_id": "B002",
+      "name": "Ợ nóng và Khó tiêu",
+      "title": "Ợ nóng và Khó tiêu: Nguyên nhân, Triệu chứng và Phòng ngừa",
+      "start_line": 95,
+      "end_line": 290,
+      "chunks": 18,
+      "retrievable_chunks": 17,
+      "heading_key": "o-nong-va-kho-tieu"
+    },
+    {
+      "disease_id": "B003",
+      "name": "Áp xe hậu môn",
+      "title": "Áp xe hậu môn: Nguyên nhân, Triệu chứng và Cách phòng ngừa",
+      "start_line": 291,
+      "end_line": 436,
+      "chunks": 16,
+      "retrievable_chunks": 15,
+      "heading_key": "ap-xe-hau-mon"
+    },
+    {
+      "disease_id": "B004",
+      "name": "Áp xe phổi",
+      "title": "Áp xe phổi: Nguyên nhân, Triệu chứng và Phương pháp điều trị",
+      "start_line": 437,
+      "end_line": 639,
+      "chunks": 25,
+      "retrievable_chunks": 24,
+      "heading_key": "ap-xe-phoi"
+    },
+    {
+      "disease_id": "B005",
+      "name": "Bàn chân đái tháo đường",
+      "title": "Bàn chân đái tháo đường: Nguyên nhân, Triệu chứng và Cách chẩn đoán",
+      "start_line": 640,
+      "end_line": 927,
+      "chunks": 37,
+      "retrievable_chunks": 35,
+      "heading_key": "ban-chan-dai-thao-duong"
+    },
+    {
+      "disease_id": "B006",
+      "name": "Bệnh cúm",
+      "title": "Bệnh cúm: Triệu chứng, Nguyên nhân và Cách chẩn đoán",
+      "start_line": 928,
+      "end_line": 1101,
+      "chunks": 17,
+      "retrievable_chunks": 16,
+      "heading_key": "benh-cum"
+    },
+    {
+      "disease_id": "B007",
+      "name": "Bệnh cườm nước (Glaucoma)",
+      "title": "Bệnh cườm nước (Glaucoma): Kẻ đánh cắp thị lực âm thầm",
+      "start_line": 1102,
+      "end_line": 1245,
+      "chunks": 16,
+      "retrievable_chunks": 15,
+      "heading_key": "benh-cuom-nuoc-glaucoma"
+    },
+    {
+      "disease_id": "B008",
+      "name": "Bệnh chàm (Eczema)",
+      "title": "Bệnh chàm (Eczema): Dấu hiệu, Nguyên nhân, Biến chứng và Chẩn đoán",
+      "start_line": 1246,
+      "end_line": 1457,
+      "chunks": 30,
+      "retrievable_chunks": 29,
+      "heading_key": "benh-cham-eczema"
+    },
+    {
+      "disease_id": "B009",
+      "name": "Bệnh Chlamydia",
+      "title": "Bệnh Chlamydia: Nguyên nhân, Triệu chứng, Điều trị, Phòng ngừa",
+      "start_line": 1458,
+      "end_line": 1648,
+      "chunks": 21,
+      "retrievable_chunks": 20,
+      "heading_key": "benh-chlamydia"
+    },
+    {
+      "disease_id": "B010",
+      "name": "Bàng quang tăng hoạt",
+      "title": "Bàng quang tăng hoạt: Nguyên nhân, Triệu chứng, Chẩn đoán và Điều trị",
+      "start_line": 1649,
+      "end_line": 1791,
+      "chunks": 17,
+      "retrievable_chunks": 16,
+      "heading_key": "bang-quang-tang-hoat"
+    },
+    {
+      "disease_id": "B011",
+      "name": "Bệnh Basedow",
+      "title": "Bệnh Basedow: Nguyên nhân, Đối tượng và Cách chẩn đoán",
+      "start_line": 1792,
+      "end_line": 1963,
+      "chunks": 22,
+      "retrievable_chunks": 21,
+      "heading_key": "benh-basedow"
+    },
+    {
+      "disease_id": "B012",
+      "name": "Bệnh cơ tim giãn nở",
+      "title": "Bệnh cơ tim giãn nở: Nguyên nhân, Dấu hiệu, Điều trị và Phòng ngừa",
+      "start_line": 1964,
+      "end_line": 2135,
+      "chunks": 16,
+      "retrievable_chunks": 15,
+      "heading_key": "benh-co-tim-gian-no"
+    },
+    {
+      "disease_id": "B013",
+      "name": "Xuất huyết tiêu hóa",
+      "title": "Xuất huyết tiêu hóa: Nguyên nhân, triệu chứng, điều trị, phòng ngừa",
+      "start_line": 2136,
+      "end_line": 2228,
+      "chunks": 19,
+      "retrievable_chunks": 18,
+      "heading_key": "xuat-huyet-tieu-hoa"
+    },
+    {
+      "disease_id": "B014",
+      "name": "Xơ vữa động mạch vành",
+      "title": "Xơ vữa động mạch vành: Nguyên nhân, triệu chứng, chẩn đoán, điều trị",
+      "start_line": 2229,
+      "end_line": 2326,
+      "chunks": 13,
+      "retrievable_chunks": 12,
+      "heading_key": "xo-vua-dong-mach-vanh"
+    },
+    {
+      "disease_id": "B015",
+      "name": "Bệnh xơ phổi",
+      "title": "Bệnh xơ phổi: Nguyên nhân, triệu chứng, điều trị và phòng ngừa",
+      "start_line": 2327,
+      "end_line": 2423,
+      "chunks": 20,
+      "retrievable_chunks": 19,
+      "heading_key": "benh-xo-phoi"
+    },
+    {
+      "disease_id": "B016",
+      "name": "Xuất tinh ngược dòng",
+      "title": "Xuất tinh ngược dòng: Tổng quan, nguyên nhân và phương pháp điều trị",
+      "start_line": 2424,
+      "end_line": 2497,
+      "chunks": 17,
+      "retrievable_chunks": 16,
+      "heading_key": "xuat-tinh-nguoc-dong"
+    },
+    {
+      "disease_id": "B017",
+      "name": "Xuất huyết dạ dày (bao tử)",
+      "title": "Xuất huyết dạ dày (bao tử): Nguyên nhân, triệu chứng và phòng ngừa",
+      "start_line": 2498,
+      "end_line": 2574,
+      "chunks": 22,
+      "retrievable_chunks": 21,
+      "heading_key": "xuat-huyet-da-day-bao-tu"
+    },
+    {
+      "disease_id": "B018",
+      "name": "Xơ gan mất bù",
+      "title": "Xơ gan mất bù: Nguyên nhân, triệu chứng và cách điều trị",
+      "start_line": 2575,
+      "end_line": 2665,
+      "chunks": 11,
+      "retrievable_chunks": 10,
+      "heading_key": "xo-gan-mat-bu"
+    },
+    {
+      "disease_id": "B019",
+      "name": "Xuất huyết tử cung bất thường",
+      "title": "Xuất huyết tử cung bất thường: Nguyên nhân, chẩn đoán và điều trị",
+      "start_line": 2666,
+      "end_line": 2731,
+      "chunks": 9,
+      "retrievable_chunks": 8,
+      "heading_key": "xuat-huyet-tu-cung-bat-thuong"
+    },
+    {
+      "disease_id": "B020",
+      "name": "🧠 Bệnh Alzheimer",
+      "title": "🧠 Bệnh Alzheimer: Nguyên nhân, triệu chứng, điều trị và phòng ngừa",
+      "start_line": 2732,
+      "end_line": 2857,
+      "chunks": 31,
+      "retrievable_chunks": 31,
+      "heading_key": "benh-alzheimer"
+    },
+    {
+      "disease_id": "B021",
+      "name": "🧠 Bệnh Động Kinh",
+      "title": "🧠 Bệnh Động Kinh: Dấu Hiệu Nhận Biết và Cách Điều Trị",
+      "start_line": 2858,
+      "end_line": 2920,
+      "chunks": 12,
+      "retrievable_chunks": 12,
+      "heading_key": "benh-dong-kinh"
+    },
+    {
+      "disease_id": "B022",
+      "name": "🦠 Bệnh Giang Mai",
+      "title": "🦠 Bệnh Giang Mai: Nguyên Nhân, Dấu Hiệu và Cách Phòng Ngừa",
+      "start_line": 2921,
+      "end_line": 2982,
+      "chunks": 12,
+      "retrievable_chunks": 12,
+      "heading_key": "benh-giang-mai"
+    },
+    {
+      "disease_id": "B023",
+      "name": "🦠 Bệnh Giun Đũa",
+      "title": "🦠 Bệnh Giun Đũa: Nguyên Nhân, Triệu Chứng, Chẩn Đoán, Phòng Ngừa",
+      "start_line": 2983,
+      "end_line": 3046,
+      "chunks": 12,
+      "retrievable_chunks": 12,
+      "heading_key": "benh-giun-dua"
+    },
+    {
+      "disease_id": "B024",
+      "name": "🐒 Bệnh Đậu Mùa Khỉ",
+      "title": "🐒 Bệnh Đậu Mùa Khỉ: Nguyên Nhân, Triệu Chứng, Điều Trị và Phòng Ngừa",
+      "start_line": 3047,
+      "end_line": 3111,
+      "chunks": 12,
+      "retrievable_chunks": 12,
+      "heading_key": "benh-dau-mua-khi"
+    },
+    {
+      "disease_id": "B025",
+      "name": "👁️ Bệnh Giác Mạc Hình Chóp",
+      "title": "👁️ Bệnh Giác Mạc Hình Chóp: Nguyên Nhân, Dấu Hiệu và Cách Điều Trị",
+      "start_line": 3112,
+      "end_line": 3153,
+      "chunks": 7,
+      "retrievable_chunks": 7,
+      "heading_key": "benh-giac-mac-hinh-chop"
+    },
+    {
+      "disease_id": "B026",
+      "name": "🐛 Bệnh Giun Đầu Gai",
+      "title": "🐛 Bệnh Giun Đầu Gai: Nguyên Nhân, Triệu Chứng, Điều Trị và Phòng Ngừa",
+      "start_line": 3154,
+      "end_line": 3201,
+      "chunks": 10,
+      "retrievable_chunks": 10,
+      "heading_key": "benh-giun-dau-gai"
+    },
+    {
+      "disease_id": "B027",
+      "name": "🧍 Tê Bì Chân Tay",
+      "title": "🧍 Tê Bì Chân Tay: Nguyên Nhân, Triệu Chứng, Điều Trị và Phòng Ngừa",
+      "start_line": 3202,
+      "end_line": 3288,
+      "chunks": 15,
+      "retrievable_chunks": 15,
+      "heading_key": "te-bi-chan-tay"
+    },
+    {
+      "disease_id": "B028",
+      "name": "💪 Bệnh Teo Cơ Do Đái Tháo Đường",
+      "title": "💪 Bệnh Teo Cơ Do Đái Tháo Đường: Nguyên Nhân, Triệu Chứng và Cách Điều Trị",
+      "start_line": 3289,
+      "end_line": 3332,
+      "chunks": 7,
+      "retrievable_chunks": 7,
+      "heading_key": "benh-teo-co-do-dai-thao-duong"
+    },
+    {
+      "disease_id": "B029",
+      "name": "🫀 Tăng Huyết Áp",
+      "title": "🫀 Tăng Huyết Áp: Nguyên Nhân, Triệu Chứng, Chẩn Đoán, Cách Phòng Ngừa",
+      "start_line": 3333,
+      "end_line": 3410,
+      "chunks": 13,
+      "retrievable_chunks": 13,
+      "heading_key": "tang-huyet-ap"
+    },
+    {
+      "disease_id": "B030",
+      "name": "🩸 Tăng Huyết Áp Vô Căn Nguyên Phát",
+      "title": "🩸 Tăng Huyết Áp Vô Căn Nguyên Phát: Nguyên Nhân, Triệu Chứng, Điều Trị",
+      "start_line": 3411,
+      "end_line": 3458,
+      "chunks": 9,
+      "retrievable_chunks": 9,
+      "heading_key": "tang-huyet-ap-vo-can-nguyen-phat"
+    },
+    {
+      "disease_id": "B031",
+      "name": "🤰 Tăng Huyết Áp Thai Kỳ",
+      "title": "🤰 Tăng Huyết Áp Thai Kỳ: Triệu Chứng, Cách Điều Trị và Phòng Ngừa",
+      "start_line": 3459,
+      "end_line": 3517,
+      "chunks": 10,
+      "retrievable_chunks": 10,
+      "heading_key": "tang-huyet-ap-thai-ky"
+    },
+    {
+      "disease_id": "B032",
+      "name": "🩸 Vỡ Mạch Máu Não",
+      "title": "🩸 Vỡ Mạch Máu Não: Dấu Hiệu, Nguyên Nhân, Chẩn Đoán và Điều Trị",
+      "start_line": 3518,
+      "end_line": 3600,
+      "chunks": 17,
+      "retrievable_chunks": 17,
+      "heading_key": "vo-mach-mau-nao"
+    },
+    {
+      "disease_id": "B033",
+      "name": "💦 Tăng Tiết Mồ Hôi",
+      "title": "💦 Tăng Tiết Mồ Hôi: Nguyên Nhân, Triệu Chứng, Điều Trị và Phòng Ngừa",
+      "start_line": 3601,
+      "end_line": 3691,
+      "chunks": 17,
+      "retrievable_chunks": 17,
+      "heading_key": "tang-tiet-mo-hoi"
+    },
+    {
+      "disease_id": "B034",
+      "name": "🚽 Táo Bón",
+      "title": "🚽 Táo Bón: Nguyên Nhân, Dấu Hiệu, Nguy Hiểm Không và Cách Trị",
+      "start_line": 3692,
+      "end_line": 3767,
+      "chunks": 12,
+      "retrievable_chunks": 12,
+      "heading_key": "tao-bon"
+    },
+    {
+      "disease_id": "B035",
+      "name": "🦴 Vôi Hóa Xương",
+      "title": "🦴 Vôi Hóa Xương: Nguyên Nhân, Dấu Hiệu, Điều Trị và Phòng Ngừa",
+      "start_line": 3768,
+      "end_line": 3835,
+      "chunks": 10,
+      "retrievable_chunks": 10,
+      "heading_key": "voi-hoa-xuong"
+    },
+    {
+      "disease_id": "B036",
+      "name": "👁️ Tật Khúc Xạ",
+      "title": "👁️ Tật Khúc Xạ: Nguyên Nhân, Triệu Chứng, Chẩn Đoán, Cách Phòng Tránh",
+      "start_line": 3836,
+      "end_line": 3889,
+      "chunks": 11,
+      "retrievable_chunks": 11,
+      "heading_key": "tat-khuc-xa"
+    },
+    {
+      "disease_id": "B037",
+      "name": "Viêm mũi",
+      "title": "Viêm mũi: Dấu hiệu, phân loại, điều trị và cách phòng ngừa",
+      "start_line": 3890,
+      "end_line": 3999,
+      "chunks": 18,
+      "retrievable_chunks": 17,
+      "heading_key": "viem-mui"
+    },
+    {
+      "disease_id": "B038",
+      "name": "Viêm phế quản phổi",
+      "title": "Viêm phế quản phổi: Nguyên nhân, biến chứng và cách phòng ngừa",
+      "start_line": 4000,
+      "end_line": 4148,
+      "chunks": 25,
+      "retrievable_chunks": 24,
+      "heading_key": "viem-phe-quan-phoi"
+    },
+    {
+      "disease_id": "B039",
+      "name": "Tiêu chảy",
+      "title": "Tiêu chảy: Nguyên nhân, biểu hiện, điều trị và cách phòng ngừa",
+      "start_line": 4149,
+      "end_line": 4302,
+      "chunks": 31,
+      "retrievable_chunks": 30,
+      "heading_key": "tieu-chay"
+    },
+    {
+      "disease_id": "B040",
+      "name": "Viêm phổi",
+      "title": "Viêm phổi: Nguyên nhân, dấu hiệu, chẩn đoán và cách điều trị",
+      "start_line": 4303,
+      "end_line": 4494,
+      "chunks": 41,
+      "retrievable_chunks": 40,
+      "heading_key": "viem-phoi"
+    },
+    {
+      "disease_id": "B041",
+      "name": "Táo bón",
+      "title": "Táo bón: Nguyên nhân, dấu hiệu, nguy hiểm không và cách trị",
+      "start_line": 4495,
+      "end_line": 4587,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "tao-bon"
+    },
+    {
+      "disease_id": "B042",
+      "name": "Viêm da dị ứng",
+      "title": "Viêm da dị ứng: Nguyên nhân, triệu chứng và cách phòng ngừa",
+      "start_line": 4588,
+      "end_line": 4712,
+      "chunks": 24,
+      "retrievable_chunks": 23,
+      "heading_key": "viem-da-di-ung"
+    },
+    {
+      "disease_id": "B043",
+      "name": "Viêm thanh quản",
+      "title": "Viêm thanh quản: Nguyên nhân, biến chứng và cách chữa trị",
+      "start_line": 4713,
+      "end_line": 4826,
+      "chunks": 15,
+      "retrievable_chunks": 14,
+      "heading_key": "viem-thanh-quan"
+    },
+    {
+      "disease_id": "B044",
+      "name": "Tiểu đêm",
+      "title": "Tiểu đêm: Nguyên nhân, dấu hiệu và phòng ngừa",
+      "start_line": 4827,
+      "end_line": 4929,
+      "chunks": 20,
+      "retrievable_chunks": 19,
+      "heading_key": "tieu-dem"
+    },
+    {
+      "disease_id": "B045",
+      "name": "Xuất huyết tử cung bất thường",
+      "title": "Xuất huyết tử cung bất thường: Nguyên nhân, chẩn đoán và điều trị",
+      "start_line": 4930,
+      "end_line": 5005,
+      "chunks": 9,
+      "retrievable_chunks": 8,
+      "heading_key": "xuat-huyet-tu-cung-bat-thuong"
+    },
+    {
+      "disease_id": "B046",
+      "name": "Xơ gan mất bù",
+      "title": "Xơ gan mất bù: Nguyên nhân, triệu chứng và cách điều trị",
+      "start_line": 5006,
+      "end_line": 5093,
+      "chunks": 10,
+      "retrievable_chunks": 9,
+      "heading_key": "xo-gan-mat-bu"
+    },
+    {
+      "disease_id": "B047",
+      "name": "Xuất tinh ngược dòng",
+      "title": "Xuất tinh ngược dòng: Tổng quan, nguyên nhân và phương pháp điều trị",
+      "start_line": 5094,
+      "end_line": 5170,
+      "chunks": 16,
+      "retrievable_chunks": 15,
+      "heading_key": "xuat-tinh-nguoc-dong"
+    },
+    {
+      "disease_id": "B048",
+      "name": "Xuất tinh sớm",
+      "title": "Xuất tinh sớm: Nguyên nhân, dấu hiệu và cách điều trị",
+      "start_line": 5171,
+      "end_line": 5255,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "xuat-tinh-som"
+    },
+    {
+      "disease_id": "B049",
+      "name": "Xuất huyết dạ dày (bao tử)",
+      "title": "Xuất huyết dạ dày (bao tử): Nguyên nhân, triệu chứng và phòng ngừa",
+      "start_line": 5256,
+      "end_line": 5354,
+      "chunks": 21,
+      "retrievable_chunks": 20,
+      "heading_key": "xuat-huyet-da-day-bao-tu"
+    },
+    {
+      "disease_id": "B050",
+      "name": "Xuất huyết tiêu hóa",
+      "title": "Xuất huyết tiêu hóa: Nguyên nhân, triệu chứng, điều trị, phòng ngừa",
+      "start_line": 5355,
+      "end_line": 5465,
+      "chunks": 15,
+      "retrievable_chunks": 14,
+      "heading_key": "xuat-huyet-tieu-hoa"
+    },
+    {
+      "disease_id": "B051",
+      "name": "Xơ vữa động mạch (mạch máu)",
+      "title": "Xơ vữa động mạch (mạch máu): Nguyên nhân, triệu chứng nhận biết",
+      "start_line": 5466,
+      "end_line": 5572,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "xo-vua-dong-mach-mach-mau"
+    },
+    {
+      "disease_id": "B052",
+      "name": "Xơ vữa động mạch vành",
+      "title": "Xơ vữa động mạch vành: Nguyên nhân, triệu chứng, chẩn đoán, điều trị",
+      "start_line": 5573,
+      "end_line": 5657,
+      "chunks": 9,
+      "retrievable_chunks": 8,
+      "heading_key": "xo-vua-dong-mach-vanh"
+    },
+    {
+      "disease_id": "B053",
+      "name": "Bệnh xơ phổi",
+      "title": "Bệnh xơ phổi: Nguyên nhân, triệu chứng, điều trị và phòng ngừa",
+      "start_line": 5658,
+      "end_line": 5764,
+      "chunks": 19,
+      "retrievable_chunks": 18,
+      "heading_key": "benh-xo-phoi"
+    },
+    {
+      "disease_id": "B054",
+      "name": "U xương",
+      "title": "U xương: Nguyên nhân, dấu hiệu, chẩn đoán và cách phòng ngừa",
+      "start_line": 5765,
+      "end_line": 5887,
+      "chunks": 24,
+      "retrievable_chunks": 23,
+      "heading_key": "u-xuong"
+    },
+    {
+      "disease_id": "B055",
+      "name": "Tiểu đường tuýp 2",
+      "title": "Tiểu đường tuýp 2: Nguyên nhân, dấu hiệu và cách phòng ngừa",
+      "start_line": 5888,
+      "end_line": 6021,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "tieu-duong-tuyp-2"
+    },
+    {
+      "disease_id": "B056",
+      "name": "Tiểu đường tuýp 1",
+      "title": "Tiểu đường tuýp 1: Nguyên nhân, triệu chứng và cách chẩn đoán",
+      "start_line": 6022,
+      "end_line": 6130,
+      "chunks": 17,
+      "retrievable_chunks": 16,
+      "heading_key": "tieu-duong-tuyp-1"
+    },
+    {
+      "disease_id": "B057",
+      "name": "Tiểu đường bị ngứa da",
+      "title": "Tiểu đường bị ngứa da: Nguyên nhân, dấu hiệu và cách điều trị",
+      "start_line": 6131,
+      "end_line": 6221,
+      "chunks": 22,
+      "retrievable_chunks": 21,
+      "heading_key": "tieu-duong-bi-ngua-da"
+    },
+    {
+      "disease_id": "B058",
+      "name": "Bệnh quai bị",
+      "title": "Bệnh quai bị: Nguyên nhân, dấu hiệu và cách chẩn đoán",
+      "start_line": 6222,
+      "end_line": 6314,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "benh-quai-bi"
+    },
+    {
+      "disease_id": "B059",
+      "name": "Bệnh viêm amidan",
+      "title": "Bệnh viêm amidan: Nguyên nhân, triệu chứng và cách điều trị",
+      "start_line": 6315,
+      "end_line": 6466,
+      "chunks": 23,
+      "retrievable_chunks": 22,
+      "heading_key": "benh-viem-amidan"
+    },
+    {
+      "disease_id": "B060",
+      "name": "Viêm amidan hốc mủ",
+      "title": "Viêm amidan hốc mủ: Nguyên nhân, triệu chứng và phương pháp điều trị",
+      "start_line": 6467,
+      "end_line": 6555,
+      "chunks": 13,
+      "retrievable_chunks": 12,
+      "heading_key": "viem-amidan-hoc-mu"
+    },
+    {
+      "disease_id": "B061",
+      "name": "Viêm amidan mạn tính",
+      "title": "Viêm amidan mạn tính: Nguyên nhân, triệu chứng và cách phòng ngừa",
+      "start_line": 6556,
+      "end_line": 6689,
+      "chunks": 22,
+      "retrievable_chunks": 21,
+      "heading_key": "viem-amidan-man-tinh"
+    },
+    {
+      "disease_id": "B062",
+      "name": "Viêm bàng quang",
+      "title": "Viêm bàng quang: Nguyên nhân, triệu chứng, chẩn đoán và phòng ngừa",
+      "start_line": 6690,
+      "end_line": 6787,
+      "chunks": 13,
+      "retrievable_chunks": 12,
+      "heading_key": "viem-bang-quang"
+    },
+    {
+      "disease_id": "B063",
+      "name": "Tiểu không tự chủ",
+      "title": "Tiểu không tự chủ: Nguyên nhân, triệu chứng, thuốc điều trị, phòng ngừa",
+      "start_line": 6788,
+      "end_line": 6898,
+      "chunks": 18,
+      "retrievable_chunks": 17,
+      "heading_key": "tieu-khong-tu-chu"
+    },
+    {
+      "disease_id": "B064",
+      "name": "Tim đập nhanh",
+      "title": "Tim đập nhanh: Nguyên nhân, triệu chứng, chẩn đoán, phòng ngừa",
+      "start_line": 6899,
+      "end_line": 7057,
+      "chunks": 30,
+      "retrievable_chunks": 29,
+      "heading_key": "tim-dap-nhanh"
+    },
+    {
+      "disease_id": "B065",
+      "name": "Suy tim mạn tính",
+      "title": "Suy tim mạn tính: Nguyên nhân, triệu chứng và cách chẩn đoán",
+      "start_line": 7058,
+      "end_line": 7174,
+      "chunks": 16,
+      "retrievable_chunks": 15,
+      "heading_key": "suy-tim-man-tinh"
+    },
+    {
+      "disease_id": "B066",
+      "name": "Suy tim phải",
+      "title": "Suy tim phải: Nguyên nhân, triệu chứng, chẩn đoán, điều trị",
+      "start_line": 7175,
+      "end_line": 7306,
+      "chunks": 21,
+      "retrievable_chunks": 20,
+      "heading_key": "suy-tim-phai"
+    },
+    {
+      "disease_id": "B067",
+      "name": "Suy tim trái",
+      "title": "Suy tim trái: Nguyên nhân, triệu chứng, chẩn đoán và điều trị",
+      "start_line": 7307,
+      "end_line": 7420,
+      "chunks": 10,
+      "retrievable_chunks": 9,
+      "heading_key": "suy-tim-trai"
+    },
+    {
+      "disease_id": "B068",
+      "name": "Suy tim",
+      "title": "Suy tim: Nguyên nhân, triệu chứng và phương pháp điều trị",
+      "start_line": 7421,
+      "end_line": 7562,
+      "chunks": 19,
+      "retrievable_chunks": 18,
+      "heading_key": "suy-tim"
+    },
+    {
+      "disease_id": "B069",
+      "name": "Suy tim giai đoạn cuối",
+      "title": "Suy tim giai đoạn cuối: Nguyên nhân, triệu chứng, điều trị",
+      "start_line": 7563,
+      "end_line": 7678,
+      "chunks": 21,
+      "retrievable_chunks": 20,
+      "heading_key": "suy-tim-giai-doan-cuoi"
+    },
+    {
+      "disease_id": "B070",
+      "name": "Suy tim sung huyết",
+      "title": "Suy tim sung huyết: Nguyên nhân, triệu chứng, chẩn đoán, điều trị",
+      "start_line": 7679,
+      "end_line": 7859,
+      "chunks": 32,
+      "retrievable_chunks": 31,
+      "heading_key": "suy-tim-sung-huyet"
+    },
+    {
+      "disease_id": "B071",
+      "name": "Suy hô hấp (cấp)",
+      "title": "Suy hô hấp (cấp): Nguyên nhân, chẩn đoán, triệu chứng và cách trị",
+      "start_line": 7860,
+      "end_line": 8020,
+      "chunks": 23,
+      "retrievable_chunks": 22,
+      "heading_key": "suy-ho-hap-cap"
+    },
+    {
+      "disease_id": "B072",
+      "name": "Suy tuyến thượng thận",
+      "title": "Suy tuyến thượng thận: Nguyên nhân, dấu hiệu và cách điều trị",
+      "start_line": 8021,
+      "end_line": 8102,
+      "chunks": 15,
+      "retrievable_chunks": 14,
+      "heading_key": "suy-tuyen-thuong-than"
+    },
+    {
+      "disease_id": "B073",
+      "name": "Suy giảm Testosterone",
+      "title": "Suy giảm Testosterone: Nguyên nhân, dấu hiệu, cách điều trị",
+      "start_line": 8103,
+      "end_line": 8215,
+      "chunks": 26,
+      "retrievable_chunks": 25,
+      "heading_key": "suy-giam-testosterone"
+    },
+    {
+      "disease_id": "B074",
+      "name": "Mụt lẹo mắt",
+      "title": "Mụt lẹo mắt: Nguyên nhân, dấu hiệu, chẩn đoán và phòng ngừa",
+      "start_line": 8216,
+      "end_line": 8307,
+      "chunks": 14,
+      "retrievable_chunks": 13,
+      "heading_key": "mut-leo-mat"
+    },
+    {
+      "disease_id": "B075",
+      "name": "Suy gan cấp",
+      "title": "Suy gan cấp: Nguyên nhân, dấu hiệu, chẩn đoán và phòng ngừa",
+      "start_line": 8308,
+      "end_line": 8385,
+      "chunks": 13,
+      "retrievable_chunks": 12,
+      "heading_key": "suy-gan-cap"
+    },
+    {
+      "disease_id": "B076",
+      "name": "Viêm gan A",
+      "title": "Viêm gan A: Nguyên nhân, dấu hiệu và cách điều trị",
+      "start_line": 8386,
+      "end_line": 8472,
+      "chunks": 12,
+      "retrievable_chunks": 11,
+      "heading_key": "viem-gan-a"
+    },
+    {
+      "disease_id": "B077",
+      "name": "Suy gan mạn tính",
+      "title": "Suy gan mạn tính: Nguyên nhân, dấu hiệu, điều trị và phòng ngừa",
+      "start_line": 8473,
+      "end_line": 8553,
+      "chunks": 13,
+      "retrievable_chunks": 12,
+      "heading_key": "suy-gan-man-tinh"
+    },
+    {
+      "disease_id": "B078",
+      "name": "Suy gan",
+      "title": "Suy gan: Nguyên nhân, dấu hiệu và cách phòng ngừa",
+      "start_line": 8554,
+      "end_line": 8652,
+      "chunks": 19,
+      "retrievable_chunks": 18,
+      "heading_key": "suy-gan"
+    },
+    {
+      "disease_id": "B079",
+      "name": "Viêm gan C",
+      "title": "Viêm gan C: Nguyên nhân, dấu hiệu, điều trị và phòng ngừa",
+      "start_line": 8653,
+      "end_line": 8742,
+      "chunks": 15,
+      "retrievable_chunks": 14,
+      "heading_key": "viem-gan-c"
+    }
+  ]
+}

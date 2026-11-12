@@ -1,0 +1,32 @@
+{
+  "name": "icare-clinic",
+  "version": "1.0.0",
+  "description": "Icare Clinic: đặt lịch khám, quản lý hồ sơ và chatbot y tế.",
+  "main": "server.js",
+  "dependencies": {
+    "argon2": "^0.45.2",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.9",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.3",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "mysql2": "^3.15.2",
+    "nodemailer": "^10.3.1",
+    "validator": "^13.15.35"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiaserchothaayfddi-bot/cosonganh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiaserchothaayfddi-bot/cosonganh/issues"
+  },
+  "homepage": "https://github.com/chiaserchothaayfddi-bot/cosonganh#readme"
+}
